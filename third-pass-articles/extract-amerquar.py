@@ -51,10 +51,15 @@ def get_id(file):
     return id_
 
 
+# Regex
+re_endpage = r'\s+\[End Page \d+\]\s+'  # # https://regex101.com/r/Mr0kWf/1
+
 # Directory Management
 if not os.path.isdir('amerquar-txt'):
     os.mkdir('amerquar-txt')
     
+
+
 #corpora
 test = ['amerquar/articles/amerquar_70_1_689161.html',
         'amerquar/articles/amerquar_70_1_689154.html']
@@ -81,8 +86,10 @@ for article in test:
     title = soup.find('div', {'id' : 'article-title'})
     body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
     body = body_tag.get_text(' ')
-    clean_body = re.sub(r'\s+\[End Page \d+\]\s+', ' ', body, flags=re.I)  # https://regex101.com/r/Mr0kWf/1
-    notes = soup.find('div', {'class' : 'fn-group'})
+    clean_body = re.sub(re_endpage, ' ', body, flags=re.I)  
+    notes_tag = soup.find('div', {'class' : 'fn-group'})
+    notes = notes_tag.get_text(' ')
+    clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
 #    works_cited = soup.find(class_='ref-list')
     with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
