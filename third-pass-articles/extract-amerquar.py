@@ -52,7 +52,7 @@ def get_id(file):
 
 
 # Regex
-re_endpage = r'\s+\[End Page \d+\]\s+'  # # https://regex101.com/r/Mr0kWf/1
+re_endpage = r'\s+\[End Page (?:[ivx]|\d)+\]\s+'  # https://regex101.com/r/Mr0kWf/2
 
 # Directory Management
 if not os.path.isdir('amerquar-txt'):
