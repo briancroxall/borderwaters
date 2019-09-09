@@ -19,6 +19,7 @@ or the author's name.
 from bs4 import BeautifulSoup
 from glob import glob
 import os
+import re
 
 def make_soup(file):
     # Function to open file and run it through BeautifulSoup
@@ -78,11 +79,13 @@ for article in test:
     year_tag = soup.find('meta', {'name' : 'citation_year'}) 
     year = year_tag['content']
     title = soup.find('div', {'id' : 'article-title'})
-    body = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
+    body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
+    body = body_tag.get_text(' ')
+    clean_body = re.sub(r'\s+\[End Page \d+\]\s+', ' ', body, flags=re.I)  # https://regex101.com/r/Mr0kWf/1
     notes = soup.find('div', {'class' : 'fn-group'})
 #    works_cited = soup.find(class_='ref-list')
     with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print(title.get_text(' '), '\n', body.get_text(' '), '\n',
+        print(title.get_text(' '), '\n', clean_body, '\n',
               notes.get_text(' '), file=new_file)
 print('\nNumber of files processed: ', counter)
