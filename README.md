@@ -17,3 +17,7 @@ Steps
 
 ### amerquar
 This folder contains the Python scripts that Jeremy Browne wrote to index and then download the 2018 and 2019 _American Quarterly_ articles from Project Muse. `indexes.txt`, `articles.txt`, and the `indexes` folder are all parts of the scripts. The `articles` folder contains the saved HTML output that we will work on.
+
+Steps
+1. Use Name Mangler to add `amerquar_` to the beginning of each file name and to replace `-` with `_` throughout the name.
+2. Run `extract-amerquar.py`, which extracts text, cleans it, and saves results in the folder `amerquar-txt`. This script was based on the `extract-jamericanhistory.py` script in this repo and then updated to fit the particular metadata schema.
