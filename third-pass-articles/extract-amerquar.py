@@ -68,6 +68,7 @@ corpus = glob('amerquar/articles/*.html')
 # Counters
 counter = 0
 skipped = 0
+checked = 0
 
 # For loop
 print('Processing files')
@@ -84,6 +85,7 @@ for article in corpus:
         skipped += 1
         continue
     else:
+        checked += 1
         fpage_tag = soup.find('meta', {'name' : 'citation_firstpage'})
         fpage = fpage_tag['content']
         lpage_tag = soup.find('meta', {'name' : 'citation_lastpage'})  # find a meta tag with a key 'name' and a value 'citation_lastpage' and then turn that into a soup object that functions like a dictionary.
@@ -104,5 +106,6 @@ for article in corpus:
                   fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
             print(title, '\n', clean_body, '\n', clean_notes,
                   file=new_file)
-print('\nNumber of files processed: ', counter)
-print('Number of \'Contributors\' articles: ', skipped)
+print('\nNumber of files considered: ', counter)
+print('Number of \'Contributors\' articles skipped: ', skipped)
+print('Number of articles processed: ', checked)
