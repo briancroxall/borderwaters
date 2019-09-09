@@ -60,10 +60,7 @@ if not os.path.isdir('jamericanhistory-txt'):
     os.mkdir('jamericanhistory-txt')
     
 #corpora
-test1 = ['jamericanhistory-html/jamericanhistory_99_3_852_891418.html']
-test = ['jamericanhistory-html/jamericanhistory_99_3_852_891418.html', 
-        'jamericanhistory-html/jamericanhistory_104_4_863_4932604.html',
-        'jamericanhistory-html/jamericanhistory_104_3_816_4655158.html']
+test = ['articles/jamericanhistory_104-4-983-4932611.html']
 corpus = glob('jamericanhistory-html/*.html')
 
 # Counters
@@ -71,7 +68,7 @@ counter = 0
 
 # For loop
 print('Processing files')
-for article in corpus:
+for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = get_journal(article)  # get journal for article from filename
