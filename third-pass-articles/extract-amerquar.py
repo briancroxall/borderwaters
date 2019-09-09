@@ -67,6 +67,7 @@ corpus = glob('amerquar/articles/*.html')
 
 # Counters
 counter = 0
+skipped = 0
 
 # For loop
 print('Processing files')
@@ -77,25 +78,31 @@ for article in corpus:
     voliss = get_voliss(article)
     file_id = get_id(article)  # get article id from filename
     soup = make_soup(article)  # create soup object
-    fpage_tag = soup.find('meta', {'name' : 'citation_firstpage'})
-    fpage = fpage_tag['content']
-    lpage_tag = soup.find('meta', {'name' : 'citation_lastpage'})  # find a meta tag with a key 'name' and a value 'citation_lastpage' and then turn that into a soup object that functions like a dictionary.
-    lpage = lpage_tag['content']  # hit that soup object dictionary for the value of the 'content' key
-    year_tag = soup.find('meta', {'name' : 'citation_year'}) 
-    year = year_tag['content']
-    title = soup.find('div', {'id' : 'article-title'})
-    body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
-    body = body_tag.get_text(' ')
-    clean_body = re.sub(re_endpage, ' ', body, flags=re.I)  
-    try:
-        notes_tag = soup.find('div', {'class' : 'fn-group'})
-        notes = notes_tag.get_text(' ')
-        clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
-    except AttributeError:
-        clean_notes = ''
-#    works_cited = soup.find(class_='ref-list')
-    with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
-              fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print(title.get_text(' '), '\n', clean_body, '\n', clean_notes,
-              file=new_file)
+    title_tag = soup.find('div', {'id' : 'article-title'})
+    title = title_tag.get_text(' ')
+    if title == 'Contributors':
+        skipped += 1
+        continue
+    else:
+        fpage_tag = soup.find('meta', {'name' : 'citation_firstpage'})
+        fpage = fpage_tag['content']
+        lpage_tag = soup.find('meta', {'name' : 'citation_lastpage'})  # find a meta tag with a key 'name' and a value 'citation_lastpage' and then turn that into a soup object that functions like a dictionary.
+        lpage = lpage_tag['content']  # hit that soup object dictionary for the value of the 'content' key
+        year_tag = soup.find('meta', {'name' : 'citation_year'}) 
+        year = year_tag['content']
+        body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
+        body = body_tag.get_text(' ')
+        clean_body = re.sub(re_endpage, ' ', body, flags=re.I)  
+        try:
+            notes_tag = soup.find('div', {'class' : 'fn-group'})
+            notes = notes_tag.get_text(' ')
+            clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
+        except AttributeError:
+            clean_notes = ''
+    #    works_cited = soup.find(class_='ref-list')
+        with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
+                  fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
+            print(title, '\n', clean_body, '\n', clean_notes,
+                  file=new_file)
 print('\nNumber of files processed: ', counter)
+print('Number of \'Contributors\' articles: ', skipped)
