@@ -7,11 +7,10 @@ Modified on 9 September 2019
 
 @author: briancroxall
 
-Script to extract info from HTML of Journal of American History,
-which Jeremy scraped for our mid-2019 gathering of data for the AQ project.
+Script to extract info from HTML of American Quarterly,which Jeremy scraped for
+our mid-2019 gathering of data for the AQ project.
 
-This script is more or less identical to that which I created for the
-second-pass on the data in 2018. 
+This script is based on the extract-jamericanhistory.py in the same folder. 
 """
 
 from bs4 import BeautifulSoup
@@ -56,12 +55,12 @@ def get_id(file):
 
 
 # Directory Management
-if not os.path.isdir('jamericanhistory-txt'):
-    os.mkdir('jamericanhistory-txt')
+if not os.path.isdir('amerquar-txt'):
+    os.mkdir('amerquar-txt')
     
 #corpora
-test = ['jamericanhistory/articles/jamericanhistory_104_4_983_4932611.html']
-corpus = glob('jamericanhistory/articles/*.html')
+test = ['amerquar/articles/amerquar_70_1_689161.html']
+corpus = glob('amerquar/articles/*.html')
 
 # Counters
 counter = 0
