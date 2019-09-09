@@ -60,8 +60,8 @@ if not os.path.isdir('jamericanhistory-txt'):
     os.mkdir('jamericanhistory-txt')
     
 #corpora
-test = ['articles/jamericanhistory_104-4-983-4932611.html']
-corpus = glob('jamericanhistory-html/*.html')
+test = ['jamericanhistory/articles/jamericanhistory_104_4_983_4932611.html']
+corpus = glob('jamericanhistory/articles/*.html')
 
 # Counters
 counter = 0
