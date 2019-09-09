@@ -93,6 +93,6 @@ for article in test:
 #    works_cited = soup.find(class_='ref-list')
     with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print(title.get_text(' '), '\n', clean_body, '\n',
-              notes.get_text(' '), file=new_file)
+        print(title.get_text(' '), '\n', clean_body, '\n', clean_notes,
+              file=new_file)
 print('\nNumber of files processed: ', counter)
