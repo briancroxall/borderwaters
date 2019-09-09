@@ -70,7 +70,7 @@ counter = 0
 
 # For loop
 print('Processing files')
-for article in test:
+for article in corpus:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = get_journal(article)  # get journal for article from filename
@@ -87,9 +87,12 @@ for article in test:
     body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
     body = body_tag.get_text(' ')
     clean_body = re.sub(re_endpage, ' ', body, flags=re.I)  
-    notes_tag = soup.find('div', {'class' : 'fn-group'})
-    notes = notes_tag.get_text(' ')
-    clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
+    try:
+        notes_tag = soup.find('div', {'class' : 'fn-group'})
+        notes = notes_tag.get_text(' ')
+        clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
+    except AttributeError:
+        clean_notes = ''
 #    works_cited = soup.find(class_='ref-list')
     with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
