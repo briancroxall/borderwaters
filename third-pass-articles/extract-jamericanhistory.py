@@ -68,7 +68,7 @@ counter = 0
 
 # For loop
 print('Processing files')
-for article in test:
+for article in corpus:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = get_journal(article)  # get journal for article from filename
