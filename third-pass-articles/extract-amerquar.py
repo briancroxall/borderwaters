@@ -60,22 +60,22 @@ counter = 0
 
 # For loop
 print('Processing files')
-for article in corpus:
+for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = get_journal(article)  # get journal for article from filename
     voliss = get_voliss(article)
     file_id = get_id(article)  # get article id from filename
-    fpage = get_fpage(article)  # get first page from filename
     soup = make_soup(article)  # create soup object
+    fpage_tag = soup.find('meta', {'name' : 'citation_firstpage'})
+    fpage = fpage_tag['content']
     lpage_tag = soup.find('meta', {'name' : 'citation_lastpage'})  # find a meta tag with a key 'name' and a value 'citation_lastpage' and then turn that into a soup object that functions like a dictionary.
     lpage = lpage_tag['content']  # hit that soup object dictionary for the value of the 'content' key
-    year_tag = soup.find('meta', {'name' : 'citation_publication_date'}) 
-    year_full = year_tag['content']
-    year = year_full.split('/')[0]  # since the above returns a date in 2012/01/01 format, split it out to just the year
-    body = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
+    year_tag = soup.find('meta', {'name' : 'citation_year'}) 
+    year = year_tag['content']
+#    body = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
 #    works_cited = soup.find(class_='ref-list')
-    with open('jamericanhistory-txt/' + journal + '_' + year + '_' + voliss + '_' + 
+    with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print(body.get_text(' '), file=new_file)
+        print('I don\'t have a body yet!', file=new_file)
 print('\nNumber of files processed: ', counter)
