@@ -11,6 +11,9 @@ Script to extract info from HTML of American Quarterly,which Jeremy scraped for
 our mid-2019 gathering of data for the AQ project.
 
 This script is based on the extract-jamericanhistory.py in the same folder. 
+
+I decided to add the title to the article, but I didn't pull in the abstract
+or the author's name.
 """
 
 from bs4 import BeautifulSoup
@@ -52,7 +55,8 @@ if not os.path.isdir('amerquar-txt'):
     os.mkdir('amerquar-txt')
     
 #corpora
-test = ['amerquar/articles/amerquar_70_1_689161.html']
+test = ['amerquar/articles/amerquar_70_1_689161.html',
+        'amerquar/articles/amerquar_70_1_689154.html']
 corpus = glob('amerquar/articles/*.html')
 
 # Counters
@@ -73,9 +77,12 @@ for article in test:
     lpage = lpage_tag['content']  # hit that soup object dictionary for the value of the 'content' key
     year_tag = soup.find('meta', {'name' : 'citation_year'}) 
     year = year_tag['content']
-#    body = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
+    title = soup.find('div', {'id' : 'article-title'})
+    body = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
+    notes = soup.find('div', {'class' : 'fn-group'})
 #    works_cited = soup.find(class_='ref-list')
     with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print('I don\'t have a body yet!', file=new_file)
+        print(title.get_text(' '), '\n', body.get_text(' '), '\n',
+              notes.get_text(' '), file=new_file)
 print('\nNumber of files processed: ', counter)
