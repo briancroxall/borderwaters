@@ -39,13 +39,6 @@ def get_voliss(file):
     return voliss
 
 
-def get_fpage(file):
-    # Function to get the page number that is built into the filename
-    name = file.split('/')[-1]
-    fpage = name.split('_')[3]
-    return fpage
-
-
 def get_id(file):
     # Function to get the ID number for each file
     name = file.split('/')[-1]
