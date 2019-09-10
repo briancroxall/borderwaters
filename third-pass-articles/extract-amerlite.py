@@ -46,28 +46,34 @@ print('Processing files')
 for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
-    voliss = get_voliss(article)
-    file_id = get_id(article)  # get article id from filename
+    journal = 'amerlite'
     soup = make_soup(article)  # create soup object
-    title_tag = soup.find('div', {'id' : 'article-title'})
-    title = title_tag.get_text(' ')
+    year_tag = soup.find('meta', {'name' : 'citation_year'}) 
+    year = year_tag['content']
+    vol_tag = soup.find('meta', {'name' : 'citation_volume'})
+    vol = vol_tag['content']
+    iss_tag = soup.find('meta', {'name' : 'citation_issue'})
+    iss = iss_tag['content']
     fpage_tag = soup.find('meta', {'name' : 'citation_firstpage'})
     fpage = fpage_tag['content']
     lpage_tag = soup.find('meta', {'name' : 'citation_lastpage'})  # find a meta tag with a key 'name' and a value 'citation_lastpage' and then turn that into a soup object that functions like a dictionary.
     lpage = lpage_tag['content']  # hit that soup object dictionary for the value of the 'content' key
-    year_tag = soup.find('meta', {'name' : 'citation_year'}) 
-    year = year_tag['content']
-    body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
+    file_id_tag = soup.find('meta', {'name' : 'citation_xml_url'})
+    file_id_full = file_id_tag['content']
+    file_id = file_id_full.split('/')[-1]
+    body_tag = soup.find('div', {'class' : 'article-body'})  # find a div tag with key/value paid as listed
     body = body_tag.get_text(' ') 
-    try:
-        notes_tag = soup.find('div', {'class' : 'fn-group'})
-        notes = notes_tag.get_text(' ')
-        clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
-    except AttributeError:
-        clean_notes = ''
+    title_tag = soup.find('meta', {'name' : 'citation_title'})
+    title = title_tag['content']
+#    try:
+#        notes_tag = soup.find('div', {'class' : 'fn-group'})
+#        notes = notes_tag.get_text(' ')
+#        clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
+#    except AttributeError:
+#        clean_notes = ''
 #    works_cited = soup.find(class_='ref-list')
-    with open('amerlite-txt/amerlite_' + year + '_' + voliss + '_' + 
-              fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print(title, '\n', clean_body, '\n', clean_notes,
-              file=new_file)
+    with open('amerlite-txt/' + journal + '_' + year + '_' + vol + '_' + iss +
+              '_' + fpage + '-' + lpage + '_' + file_id + '.txt', 
+              'w') as new_file:
+        print(title, '\n', body, file=new_file)
 print('\nNumber of files processed: ', counter)
