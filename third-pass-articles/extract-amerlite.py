@@ -15,7 +15,7 @@ in the same folder.
 from bs4 import BeautifulSoup
 from glob import glob
 import os
-#import re
+import re
 
 def make_soup(file):
     # Function to open file and run it through BeautifulSoup
@@ -25,6 +25,7 @@ def make_soup(file):
 
 
 # Regex
+re_notes = r'(\d)([A-Z])'
 
 # Directory Management
 if not os.path.isdir('amerlite-txt'):
@@ -75,7 +76,8 @@ for article in test:
         body_tag.find('div', {'class': 'article-metadata-panel clearfix'}).extract()
     except AttributeError:
         pass
-    body = body_tag.get_text() 
+    body = body_tag.get_text()
+    fixed_notes = re.sub(re_notes, r'\n\1 \2', body, flags=0)
 #    try:
 #        notes_tag = soup.find('div', {'class' : 'fn-group'})
 #        notes = notes_tag.get_text(' ')
@@ -86,5 +88,5 @@ for article in test:
     with open('amerlite-txt/' + journal + '_' + year + '_' + vol + '_' + iss +
               '_' + fpage + '-' + lpage + '_' + file_id + '.txt', 
               'w') as new_file:
-        print(title, body, file=new_file)
+        print(title, fixed_notes, file=new_file)
 print('\nNumber of files processed: ', counter)
