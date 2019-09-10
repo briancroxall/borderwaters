@@ -15,7 +15,7 @@ in the same folder.
 from bs4 import BeautifulSoup
 from glob import glob
 import os
-import re
+#import re
 
 def make_soup(file):
     # Function to open file and run it through BeautifulSoup
@@ -40,16 +40,15 @@ corpus = glob('amerlite/*.html')
 # Counters
 counter = 0
 
-
-# For loop
+# loop
 print('Processing files')
 for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = 'amerlite'
     soup = make_soup(article)  # create soup object
-    year_tag = soup.find('meta', {'name' : 'citation_year'}) 
-    year = year_tag['content']
+    year_tag = soup.find('meta', {'name' : 'citation_publication_date'}) 
+    year = year_tag['content'].split('/')[0]
     vol_tag = soup.find('meta', {'name' : 'citation_volume'})
     vol = vol_tag['content']
     iss_tag = soup.find('meta', {'name' : 'citation_issue'})
