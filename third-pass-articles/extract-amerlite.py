@@ -50,9 +50,9 @@ if not os.path.isdir('amerquar-txt'):
 
 
 #corpora
-test = ['amerquar/articles/amerquar_70_1_689161.html',
-        'amerquar/articles/amerquar_70_1_689154.html']
-corpus = glob('amerquar/articles/*.html')
+test = ['amerlite/Archives_of_Flesh-African_America,_Spain,_and_Post-Humanist_CritiqueIncomparable_Empires-Modernism_and_the_Translation_of_Spanish_and_American_Literature-American_Literature.html',
+        'amerlite/Islam,_Puritanism,_and_Secular_Time-American_Literature.html']
+corpus = glob('amerlite/*.html')
 
 # Counters
 counter = 0
@@ -60,7 +60,7 @@ counter = 0
 
 # For loop
 print('Processing files')
-for article in corpus:
+for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = 'amerlite'
