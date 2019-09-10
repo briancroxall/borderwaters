@@ -25,13 +25,11 @@ def make_soup(file):
 
 
 # Regex
-re_notes = r'(\d)([A-Z])'
+re_notes = r'(\d+)([A-Z])'
 
 # Directory Management
 if not os.path.isdir('amerlite-txt'):
     os.mkdir('amerlite-txt')
-    
-
 
 #corpora
 test = ['amerlite/Archives_of_Flesh-African_America,_Spain,_and_Post-Humanist_CritiqueIncomparable_Empires-Modernism_and_the_Translation_of_Spanish_and_American_Literature-American_Literature.html',
