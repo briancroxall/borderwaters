@@ -24,22 +24,6 @@ def make_soup(file):
         return soup
 
 
-def get_voliss(file):
-    # Function to get volume and issue from filename
-    name = file.split('/')[-1]
-    voliss_split = name.split('_')[1:3]
-    voliss = ('_').join(voliss_split)
-    return voliss
-
-
-def get_id(file):
-    # Function to get the ID number for each file
-    name = file.split('/')[-1]
-    no_ext = name.split('.')[0]
-    id_ = no_ext.split('_')[-1]
-    return id_
-
-
 # Regex
 
 # Directory Management
@@ -62,7 +46,6 @@ print('Processing files')
 for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
-    journal = 'amerlite'
     voliss = get_voliss(article)
     file_id = get_id(article)  # get article id from filename
     soup = make_soup(article)  # create soup object
@@ -75,8 +58,7 @@ for article in test:
     year_tag = soup.find('meta', {'name' : 'citation_year'}) 
     year = year_tag['content']
     body_tag = soup.find('div', {'id' : 'body'})  # find a div tag with key/value paid as listed
-    body = body_tag.get_text(' ')
-    clean_body = re.sub(re_endpage, ' ', body, flags=re.I)  
+    body = body_tag.get_text(' ') 
     try:
         notes_tag = soup.find('div', {'class' : 'fn-group'})
         notes = notes_tag.get_text(' ')
@@ -84,7 +66,7 @@ for article in test:
     except AttributeError:
         clean_notes = ''
 #    works_cited = soup.find(class_='ref-list')
-    with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
+    with open('amerlite-txt/amerlite_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
         print(title, '\n', clean_body, '\n', clean_notes,
               file=new_file)
