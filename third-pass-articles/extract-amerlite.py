@@ -60,10 +60,22 @@ for article in test:
     file_id_tag = soup.find('meta', {'name' : 'citation_xml_url'})
     file_id_full = file_id_tag['content']
     file_id = file_id_full.split('/')[-1]
-    body_tag = soup.find('div', {'class' : 'article-body'})  # find a div tag with key/value paid as listed
-    body = body_tag.get_text(' ') 
     title_tag = soup.find('meta', {'name' : 'citation_title'})
     title = title_tag['content']
+    body_tag = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
+    try:
+        body_tag.h2.extract()  # This looks for this particular tag within body_tag and then pops it out of body_tag
+    except AttributeError:
+        pass
+    try:
+        body_tag.section.extract()
+    except AttributeError:
+        pass
+    try:
+        body_tag.find('div', {'class': 'article-metadata-panel clearfix'}).extract()
+    except AttributeError:
+        pass
+    body = body_tag.get_text() 
 #    try:
 #        notes_tag = soup.find('div', {'class' : 'fn-group'})
 #        notes = notes_tag.get_text(' ')
@@ -74,5 +86,5 @@ for article in test:
     with open('amerlite-txt/' + journal + '_' + year + '_' + vol + '_' + iss +
               '_' + fpage + '-' + lpage + '_' + file_id + '.txt', 
               'w') as new_file:
-        print(title, '\n', body, file=new_file)
+        print(title, body, file=new_file)
 print('\nNumber of files processed: ', counter)
