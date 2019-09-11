@@ -9,8 +9,11 @@ In this folder you will find the scripts related to the August / September harve
 I started in this folder with duplicates of the files from the `hand-downloads` folder.
 
 Steps
-1. Use Name Mangler to remove any quotation marks from the titles of the saved files.
+1. Use Name Mangler to change names from the format `“An Extreme Sense of Protest against Everything”_ Chester Himes’s Prison Novel _ American Literature _ Duke University Press.html` to `An_Extreme_Sense_of_Protest_against_Everything-Chester_Himess_Prison_Novel-American_Literature.html`. Got rid of the 1) smart quotes and apostrophes, spaces, the press's name.
+2. Run `extract-amerlite.py`, which extracts text and saves results in the folder `amerlite-txt`. This script was based on  `extract-amerquar.py` in this repo, but was modified to fit its metadata peculiarities.
 
+### amerlite-txt
+Text files generated from `amerlite` folder (see above).
 
 #### hand-downloads
 This folder contains the HTML that I hand-downloaded directly from Duke UP (via BYU's Library) for the 2018 and 2019 articles. 
