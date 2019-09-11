@@ -26,8 +26,9 @@ def make_soup(file):
 
 # Regex
 re_notes = r'(\d+)([A-Z])'  # https://regex101.com/r/EwpLIn/2
-re_ref2 = r'([A-Z][a-z]+)([A-Z])'  # https://regex101.com/r/WX1gxg/1
 re_ref1 = r'(References)([A-Z])'  # https://regex101.com/r/WX1gxg/2
+re_ref2 = r'([A-Z][a-z]+)([A-Z])'  # https://regex101.com/r/WX1gxg/1
+
 
 # Directory Management
 if not os.path.isdir('amerlite-txt'):
@@ -80,13 +81,6 @@ for article in test:
     fixed_notes = re.sub(re_notes, r'\n\1 \2', body, flags=0)
     ref_fix1 = re.sub(re_ref1, r'References \2', fixed_notes, flags=0)
     ref_fix2 = re.sub(re_ref2, r'\1, \2', ref_fix1, flags=0)
-#    try:
-#        notes_tag = soup.find('div', {'class' : 'fn-group'})
-#        notes = notes_tag.get_text(' ')
-#        clean_notes = re.sub(re_endpage, ' ', notes, flags=re.I)
-#    except AttributeError:
-#        clean_notes = ''
-#    works_cited = soup.find(class_='ref-list')
     with open('amerlite-txt/' + journal + '_' + year + '_' + vol + '_' + iss +
               '_' + fpage + '-' + lpage + '_' + file_id + '.txt', 
               'w') as new_file:
