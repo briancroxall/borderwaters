@@ -8,7 +8,7 @@ In this folder you will find the scripts related to the August / September harve
 Steps
 1. Collect data (by hand for amerlite, by script for other two).
 2. Clean data (using Name Mangler and various `extract` Python scripts).
-3. Copy data from `amerlite-txt`, `amerquar-txt` and `jamericanhistory-txt` to the `articles` folder in the [`all-archi-files`](https://github.com/briancroxall/all-archi-repos) repo.
+3. Copy data from `amerlite-txt`, `amerquar-txt` and `jamericanhistory-txt` to the `articles` folder in the [`all-archi-files`](https://github.com/briancroxall/all-archi-files) repo.
 
 ### amerlite
 I started in this folder with duplicates of the files from the `hand-downloads` folder.
