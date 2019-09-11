@@ -44,7 +44,7 @@ counter = 0
 
 # loop
 print('Processing files')
-for article in test:
+for article in corpus:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = 'amerlite'
