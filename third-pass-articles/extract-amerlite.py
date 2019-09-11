@@ -23,12 +23,13 @@ def make_soup(file):
         soup = BeautifulSoup(html_file, 'html5lib')
         return soup
     
+"""    
 def get_html_title(file):
     # function to extract first 50 characters of title from HTML file
     no_dir = file.split('/')[-1]
     no_ext = no_dir.split('.')[0]
     return no_ext[:50]
-
+"""
 
 # Regex
 re_notes = r'(\d+)([A-Z])'  # https://regex101.com/r/EwpLIn/2
@@ -40,8 +41,11 @@ re_ref2 = r'([A-Z][a-z]+)([A-Z])'  # https://regex101.com/r/WX1gxg/1
 if not os.path.isdir('amerlite-txt'):
     os.mkdir('amerlite-txt')
     
+"""
 with open('amerlite-check.tsv', 'w') as new_file:
-    print('HTML title', 'Extracted Title', sep='\t', file=new_file)
+    print('Number', 'HTML title', 'Extracted Title', 'New Name', 
+          sep='\t', file=new_file)
+"""
 
 #corpora
 test = ['amerlite/Archives_of_Flesh-African_America,_Spain,_and_Post-Humanist_CritiqueIncomparable_Empires-Modernism_and_the_Translation_of_Spanish_and_American_Literature-American_Literature.html',
@@ -57,7 +61,7 @@ for article in corpus:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = 'amerlite'
-    html_title = get_html_title(article)
+#    html_title = get_html_title(article)
     soup = make_soup(article)  # create soup object
     year_tag = soup.find('meta', {'name' : 'citation_publication_date'}) 
     year = year_tag['content'].split('/')[0]
@@ -95,8 +99,10 @@ for article in corpus:
               '_' + fpage + '-' + lpage + '_' + file_id + '.txt', 
               'w') as new_file:
         print(title, ref_fix2, file=new_file)
+"""    
     with open('amerlite-check.tsv', 'a') as output_file:
-        print(html_title, title, journal + '_' + year + '_' + vol + '_' + iss +
-              '_' + fpage + '-' + lpage + '_' + file_id,
+        print(counter, html_title, title[:50], journal + '_' + year + '_' + vol
+              + '_' + iss + '_' + fpage + '-' + lpage + '_' + file_id,
               sep='\t', file=output_file)
+"""
 print('\nNumber of files processed: ', counter)
