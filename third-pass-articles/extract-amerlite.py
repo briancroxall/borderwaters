@@ -96,5 +96,7 @@ for article in corpus:
               'w') as new_file:
         print(title, ref_fix2, file=new_file)
     with open('amerlite-check.tsv', 'a') as output_file:
-        print(html_title, title, sep='\t', file=output_file)
+        print(html_title, title, journal + '_' + year + '_' + vol + '_' + iss +
+              '_' + fpage + '-' + lpage + '_' + file_id,
+              sep='\t', file=output_file)
 print('\nNumber of files processed: ', counter)
