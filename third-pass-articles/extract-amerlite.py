@@ -41,7 +41,7 @@ if not os.path.isdir('amerlite-txt'):
     os.mkdir('amerlite-txt')
     
 with open('amerlite-check.tsv', 'w') as new_file:
-    print('HTML title', 'Extracted Title', sep='\t')
+    print('HTML title', 'Extracted Title', sep='\t', file=new_file)
 
 #corpora
 test = ['amerlite/Archives_of_Flesh-African_America,_Spain,_and_Post-Humanist_CritiqueIncomparable_Empires-Modernism_and_the_Translation_of_Spanish_and_American_Literature-American_Literature.html',
