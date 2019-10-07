@@ -1,3 +1,4 @@
+71-3	https://muse.jhu.edu/issue/41013
 71-2	https://muse.jhu.edu/issue/40616
 71-1	https://muse.jhu.edu/issue/40128
 70-4	https://muse.jhu.edu/issue/39578
