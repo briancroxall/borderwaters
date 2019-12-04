@@ -3,7 +3,9 @@ Scripts related to the _Borderwaters_ project.
 
 # Folders
 ## third-pass-articles
-In this folder you will find the scripts related to the August / September harvesting of 2018 and 2019 data that we used to round out the data for the book.
+In this folder you will find the scripts related to the August / September 2019 harvesting of 2018 and 2019 data that we used to round out the data for the book. 
+
+We returned to this process in December 2019 to get the last issue of each of the articles. To make this last pass simpler and faster, I eliminated most of the files that we had collected during the Aug/Sep 2019.
 
 Steps
 1. Collect data (by hand for amerlite, by script for other two).
