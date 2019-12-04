@@ -59,8 +59,11 @@ def get_id(file):
 if not os.path.isdir('jamericanhistory-txt'):
     os.mkdir('jamericanhistory-txt')
     
+if not os.path.isdir('jamericanhistory-dec2019-txt'):
+    os.mkdir('jamericanhistory-dec2019-txt')
+    
 #corpora
-test = ['jamericanhistory/articles/jamericanhistory_104_4_983_4932611.html']
+test = ['jamericanhistory/articles/jamericanhistory_106_3_835_5628997.html']
 corpus = glob('jamericanhistory/articles/*.html')
 
 # Counters
@@ -83,7 +86,7 @@ for article in corpus:
     year = year_full.split('/')[0]  # since the above returns a date in 2012/01/01 format, split it out to just the year
     body = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
 #    works_cited = soup.find(class_='ref-list')
-    with open('jamericanhistory-txt/' + journal + '_' + year + '_' + voliss + '_' + 
+    with open('jamericanhistory-dec2019-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
         print(body.get_text(' '), file=new_file)
 print('\nNumber of files processed: ', counter)
