@@ -26,4 +26,4 @@ for url in tqdm(articles):
 		html = driver.page_source
 		with open(filename, 'w') as f:
 			f.write(html)
-		time.sleep(random.uniform(3,10))
+		time.sleep(random.uniform(30,60))
