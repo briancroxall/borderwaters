@@ -17,6 +17,7 @@ second-pass on the data in 2018.
 from bs4 import BeautifulSoup
 from glob import glob
 import os
+import re
 
 def make_soup(file):
     # Function to open file and run it through BeautifulSoup
@@ -84,9 +85,11 @@ for article in corpus:
     year_tag = soup.find('meta', {'name' : 'citation_publication_date'}) 
     year_full = year_tag['content']
     year = year_full.split('/')[0]  # since the above returns a date in 2012/01/01 format, split it out to just the year
-    body = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
+    body_tag = soup.find('div', {'data-widgetname' : 'ArticleFulltext'})  # find a div tag with key/value paid as listed
+    body = body_tag.get_text(' ')
 #    works_cited = soup.find(class_='ref-list')
+    body_fixed = re.sub(r'© The Author 20.+', '', body, flags=re.I)
     with open('jamericanhistory-dec2019-txt/' + journal + '_' + year + '_' + voliss + '_' + 
               fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
-        print(body.get_text(' '), file=new_file)
+        print(body_fixed, file=new_file)
 print('\nNumber of files processed: ', counter)
