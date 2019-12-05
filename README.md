@@ -35,6 +35,9 @@ Steps
 ### jamericanhistory-txt
 Text files generated from `jamericanhistory` folder (see above).
 
+### jamericanhistory-dec2019-txt
+Text files generated from `jamericanhistory` folder (see above) in December 2019. This is the final issue of the decade. I created a separate folder so I wouldn't have to delete the current text files. 
+
 ### amerquar
 This folder contains the Python scripts that Jeremy Browne wrote to index and then download the 2018 and 2019 _American Quarterly_ articles from Project Muse. `indexes.txt`, `articles.txt`, and the `indexes` folder are all parts of the scripts. The `articles` folder contains the saved HTML output that we will work on.
 
