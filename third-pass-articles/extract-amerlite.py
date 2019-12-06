@@ -35,6 +35,8 @@ def get_html_title(file):
 re_notes = r'(\d+)([A-Z])'  # https://regex101.com/r/EwpLIn/2
 re_ref1 = r'(References)([A-Z])'  # https://regex101.com/r/WX1gxg/2
 re_ref2 = r'([A-Z][a-z]+)([A-Z])'  # https://regex101.com/r/WX1gxg/1
+spacing = r'(References\n|Notes\n)'  # https://regex101.com/r/tcMcTL/1
+copyright_ = r'Copyright © 201.+'
 
 
 # Directory Management
@@ -98,10 +100,12 @@ for article in test:
     fixed_notes = re.sub(re_notes, r'\n\1 \2', body, flags=0)
     ref_fix1 = re.sub(re_ref1, r'References \2', fixed_notes, flags=0)
     ref_fix2 = re.sub(re_ref2, r'\1, \2', ref_fix1, flags=0)
+    spacing_fix = re.sub(spacing, r'\n\n\1', ref_fix2, flags=0)
+    no_copyright = re.sub(copyright_, '', spacing_fix, flags=0)
     with open('amerlite-dec2019-txt/' + journal + '_' + year + '_' + vol + '_'
               + iss + '_' + fpage + '-' + lpage + '_' + file_id + '.txt',
               'w') as new_file:
-        print(title, ref_fix2, file=new_file)
+        print(title, no_copyright, file=new_file)
 """    
     with open('amerlite-check.tsv', 'a') as output_file:
         print(counter, html_title, title[:50], journal + '_' + year + '_' + vol
