@@ -62,7 +62,7 @@ counter = 0
 
 # loop
 print('Processing files')
-for article in test:
+for article in corpus:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = 'amerlite'
@@ -102,8 +102,7 @@ for article in test:
     ref_fix2 = re.sub(re_ref2, r'\1, \2', ref_fix1, flags=0)
     spacing_fix = re.sub(spacing, r'\n\n\1', ref_fix2, flags=0)
     no_copyright = re.sub(copyright_, '', spacing_fix, flags=0)
-    with open('amerlite-dec2019-txt/' + journal + '_' + year + '_' + vol + '_'
-              + iss + '_' + fpage + '-' + lpage + '_' + file_id + '.txt',
+    with open(f'amerlite-dec2019-txt/{journal}_{year}_{vol}_{iss}_{fpage}-{lpage}_{file_id}.txt',
               'w') as new_file:
         print(title, no_copyright, file=new_file)
 """    
