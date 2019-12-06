@@ -41,6 +41,9 @@ re_ref2 = r'([A-Z][a-z]+)([A-Z])'  # https://regex101.com/r/WX1gxg/1
 if not os.path.isdir('amerlite-txt'):
     os.mkdir('amerlite-txt')
     
+if not os.path.isdir('amerlite-dec2019-txt'):
+    os.mkdir('amerlite-dec2019-txt')
+    
 """
 with open('amerlite-check.tsv', 'w') as new_file:
     print('Number', 'HTML title', 'Extracted Title', 'New Name', 
@@ -48,8 +51,8 @@ with open('amerlite-check.tsv', 'w') as new_file:
 """
 
 #corpora
-test = ['amerlite/Archives_of_Flesh-African_America,_Spain,_and_Post-Humanist_CritiqueIncomparable_Empires-Modernism_and_the_Translation_of_Spanish_and_American_Literature-American_Literature.html',
-        'amerlite/Islam,_Puritanism,_and_Secular_Time-American_Literature.html']
+test = ['amerlite/Choosing-Death-The-Making-of-Martyrs-in-Early-American-Criminal-Narratives.html',
+        'amerlite/Dead-Letters-Sent-Queer-Literary-TransmissionOld-Futures-Speculative-Fiction-and-Queer-PossibilityCirculating-Queerness-Before-the-Gay-and-Lesbian-NovelMelodrama-An-Aesthetics-of-Impossibility.html']
 corpus = glob('amerlite/*.html')
 
 # Counters
@@ -57,7 +60,7 @@ counter = 0
 
 # loop
 print('Processing files')
-for article in corpus:
+for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = 'amerlite'
@@ -95,8 +98,8 @@ for article in corpus:
     fixed_notes = re.sub(re_notes, r'\n\1 \2', body, flags=0)
     ref_fix1 = re.sub(re_ref1, r'References \2', fixed_notes, flags=0)
     ref_fix2 = re.sub(re_ref2, r'\1, \2', ref_fix1, flags=0)
-    with open('amerlite-txt/' + journal + '_' + year + '_' + vol + '_' + iss +
-              '_' + fpage + '-' + lpage + '_' + file_id + '.txt', 
+    with open('amerlite-dec2019-txt/' + journal + '_' + year + '_' + vol + '_'
+              + iss + '_' + fpage + '-' + lpage + '_' + file_id + '.txt',
               'w') as new_file:
         print(title, ref_fix2, file=new_file)
 """    
