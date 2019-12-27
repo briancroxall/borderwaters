@@ -58,12 +58,12 @@ re_endpage = r'\s+\[End Page (?:[ivx]|\d)+\]\s+'  # https://regex101.com/r/Mr0kW
 if not os.path.isdir('amerquar-txt'):
     os.mkdir('amerquar-txt')
 if not os.path.isdir('amerquar-dec2019-txt'):
-    os.mkdir('amerquear-dec2019-txt')
+    os.mkdir('amerquar-dec2019-txt')
     
 
 
 #corpora
-test = ['amerquar/articles/amerquar_71_4_744960.htmll',
+test = ['amerquar/articles/amerquar_71_4_744960.html',
         'amerquar/articles/amerquar_71_4_744978.html']
 corpus = glob('amerquar/articles/*.html')
 
