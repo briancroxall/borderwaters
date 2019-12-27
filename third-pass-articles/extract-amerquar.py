@@ -57,12 +57,14 @@ re_endpage = r'\s+\[End Page (?:[ivx]|\d)+\]\s+'  # https://regex101.com/r/Mr0kW
 # Directory Management
 if not os.path.isdir('amerquar-txt'):
     os.mkdir('amerquar-txt')
+if not os.path.isdir('amerquar-dec2019-txt'):
+    os.mkdir('amerquear-dec2019-txt')
     
 
 
 #corpora
-test = ['amerquar/articles/amerquar_70_1_689161.html',
-        'amerquar/articles/amerquar_70_1_689154.html']
+test = ['amerquar/articles/amerquar_71_4_744960.htmll',
+        'amerquar/articles/amerquar_71_4_744978.html']
 corpus = glob('amerquar/articles/*.html')
 
 # Counters
@@ -72,7 +74,7 @@ checked = 0
 
 # For loop
 print('Processing files')
-for article in corpus:
+for article in test:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = get_journal(article)  # get journal for article from filename
@@ -102,8 +104,8 @@ for article in corpus:
         except AttributeError:
             clean_notes = ''
     #    works_cited = soup.find(class_='ref-list')
-        with open('amerquar-txt/' + journal + '_' + year + '_' + voliss + '_' + 
-                  fpage + '-' + lpage + '_' + file_id + '.txt', 'w') as new_file:
+        with open(f'amerquar-dec2019-txt/{journal}_{year}_{voliss}_{fpage}_{lpage}_{file_id}.txt',
+                  'w') as new_file:
             print(title, '\n', clean_body, '\n', clean_notes,
                   file=new_file)
 print('\nNumber of files considered: ', counter)
