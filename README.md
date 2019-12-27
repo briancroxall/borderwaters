@@ -11,6 +11,7 @@ Steps
 1. Collect data (by hand for amerlite, by script for other two).
 2. Clean data (using Name Mangler and various `extract` Python scripts).
 3. Copy data from `amerlite-txt`, `amerquar-txt` and `jamericanhistory-txt` to the `articles` folder in the [`all-archi-files`](https://github.com/briancroxall/all-archi-files) repo.
+4. In December 2019, copy data from `amerlite-dec2019-txt`, `amerquar-dec2019-txt`, and `jamericanhistory-dec2019-txt` folders to the `articles` folder in the [`all-archi-files`](https://github.com/briancroxall/all-archi-files) repo.
 
 ### amerlite
 I started in this folder with duplicates of the files from the `hand-downloads` folder.
@@ -27,6 +28,12 @@ Text files generated from `amerlite` folder (see above).
 #### hand-downloads
 This folder contains the HTML that I hand-downloaded directly from Duke UP (via BYU's Library) for the 2018 and 2019 articles. 
 
+#### hand-downloads-dec2019
+This folder contains the HTML that I hand-downloaded directly in December 2019 from Duke UP (via BYU's Library) for the final 2019 issue.
+
+### amerlite-dec2019-txt
+Text files generated from `amerlite` folder (see above) in December 2019. This is the final issue of the decade. I created a separate folder so I wouldn't have to delete the current text files. 
+
 ### amerquar
 This folder contains the Python scripts that Jeremy Browne wrote to index and then download the 2018 and 2019 _American Quarterly_ articles from Project Muse. `indexes.txt`, `articles.txt`, and the `indexes` folder are all parts of the scripts. The `articles` folder contains the saved HTML output that we will work on.
 
@@ -36,6 +43,9 @@ Steps
 
 ### amerquar-txt
 Text files generated from `amerquar` folder (see above).
+
+### amerquar-dec2019-txt
+Text files generated from `amerquar` folder (see above) in December 2019. This is the final issue of the decade. I created a separate folder so I wouldn't have to delete the current text files. 
 
 ### jamericanhistory
 This folder contains the Python scripts that Jeremy Browne wrote to index and then download the 2018 and 2019 _Journal of American History_ articles from Oxford UP. `indexes.txt`, `articles.txt`, and the `indexes` folder are all parts of the scripts. The `articles` folder contains the saved HTML output that we will work on.
