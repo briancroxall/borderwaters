@@ -74,7 +74,7 @@ checked = 0
 
 # For loop
 print('Processing files')
-for article in test:
+for article in corpus:
     counter += 1  # increment counter
     print('.', end='', flush=True)  # print progress dots
     journal = get_journal(article)  # get journal for article from filename
@@ -104,7 +104,7 @@ for article in test:
         except AttributeError:
             clean_notes = ''
     #    works_cited = soup.find(class_='ref-list')
-        with open(f'amerquar-dec2019-txt/{journal}_{year}_{voliss}_{fpage}_{lpage}_{file_id}.txt',
+        with open(f'amerquar-dec2019-txt/{journal}_{year}_{voliss}_{fpage}-{lpage}_{file_id}.txt',
                   'w') as new_file:
             print(title, '\n', clean_body, '\n', clean_notes,
                   file=new_file)
