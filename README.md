@@ -1,5 +1,7 @@
 # borderwaters
-Scripts related to the _Borderwaters_ project.
+This repository contains work related to conclusion for [Brian Russell Roberts](https://humanities.byu.edu/person/brian-russell-roberts/)'s book [_Borderwaters_](https://www.dukeupress.edu/borderwaters). The work for this project began in winter 2018 and continued through the publication of the book in spring 2021. 
+
+For copyright reasons, the repo mostly contains only scripts and text that we have written. The data that we used cannot be shared. We know this means that our work is not immediately reproducible but we hope that making our process visible will allow interested parties to see how we did the work. 
 
 # Folders
 ## third-pass-articles
