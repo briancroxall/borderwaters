@@ -45,5 +45,11 @@ Steps
 This folder contains text that was written by Brian Croxall for endnotes to the conclusion of _Borderwaters_.
 
 - `endnote_drafts.md` was created in May 2019
-- `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion
+- `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing 
 
+
+TODO
+[x] borderwaters repo
+[x] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published.)
+[ ] all-archi-files repo
+[ ] jstor repo
