@@ -46,7 +46,7 @@ This folder contains the scripts we used to clean the data we received from JSTO
 
 Steps
 1. Rename files using `rename-jstor-full-data.py`; renamed text goes to a `renamed-articles` folder and renamed metadata goes to a `renamed-metadata` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`
-  - During renaming process, funnel articles that were titled "Front Matter," "Back Matter," "Volume Information," or "Notes on the Contributors" to a `front-matter` folder. These articles will no longer be included in our data moving forward.
+    - During renaming process, funnel articles that were titled "Front Matter," "Back Matter," "Volume Information," or "Notes on the Contributors" to a `front-matter` folder. These articles will no longer be included in our data moving forward.
 2.
 
 ## 3analyze_data
