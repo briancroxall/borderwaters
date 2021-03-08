@@ -44,10 +44,11 @@ Steps
 ### jstor
 This folder contains the scripts we used to clean the data we received from JSTOR. The data came as metadata (in `.xml`) and as the text of OCR'd articles (in `.txt`). While the filename of an article and its metadata matched, they were not especially human readable. We used `rename-jstor-full-data.py` to rename both files based on the metadata.
 
-Steps
+#### Steps
 1. Rename files using `rename-jstor-full-data.py`; renamed text goes to a `renamed-articles` folder and renamed metadata goes to a `renamed-metadata` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`
-    - During renaming process, funnel articles that were titled "Front Matter," "Back Matter," "Volume Information," or "Notes on the Contributors" to a `front-matter` folder. These articles will no longer be included in our data moving forward.
-2.
+    - During the renaming process, this script funnels articles that were titled (in metadata) "Front Matter," "Back Matter," "Volume Information," or "Notes on the Contributors" to a `front-matter` folder. These articles were no longer included in our data moving forward.
+2. Use `jstor-clean.py` to clean the contents of `renamed-articles`, sending output to `simple-cleaned-articles`.
+3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
 
 ## 3analyze_data
 
@@ -62,5 +63,5 @@ This folder contains text that was written by Brian Croxall for endnotes to the 
 - [x] borderwaters repo
 - [x] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published.)
 - [ ] all-archi-files repo
-- [ ] jstor repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [x] jstor repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 
