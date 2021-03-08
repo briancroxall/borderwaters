@@ -34,16 +34,6 @@ articles = glob('renamed-articles/*.txt')
 # create directories
 if not os.path.isdir('simple-cleaned-articles'):
     os.mkdir('simple-cleaned-articles')
-#if not os.path.isdir('simple-cleaned-articles/amerquar'):
-#    os.mkdir('simple-cleaned-articles/amerquar')
-#if not os.path.isdir('simple-cleaned-articles/amerlite'):
-#    os.mkdir('simple-cleaned-articles/amerlite')
-#if not os.path.isdir('simple-cleaned-articles/amerlitehist'):
-#    os.mkdir('simple-cleaned-articles/amerlitehist')
-#if not os.path.isdir('simple-cleaned-articles/jamericanhistory'):
-#    os.mkdir('simple-cleaned-articles/jamericanhistory')
-#if not os.path.isdir('simple-cleaned-articles/jamerstud'):
-#    os.mkdir('simple-cleaned-articles/jamerstud')
 
 # Regex for cleaning
 regex_xml = r'(<plain_text>|</plain_text>|<page sequence="[0-9]+?">|</page>)'  # regex for page break tags
