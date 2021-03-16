@@ -5,7 +5,7 @@ This project was conducted across six separate, private repositories, of which t
 
 ## Data
 
-Data for this project was obtained in several steps and from several sources:
+Data for this project were obtained in several steps and from several sources:
 1. JSTOR's [Data for Research](https://www.jstor.org/dfr/) provided us with the bulk of the print runs of the following journals: _American Literature_ from 1929-1999; _American Quarterly_ from 1949-2012; and _Journal of American History_ from 1964-2012. In addition, JSTOR provided us with data from _American Literary History_ (1989-2012) and _Journal of American Studies_ (1967-2012) but in the end we decided to focus our efforts only on the first three journals. 
 2. [Duke University Press](https://www.dukeupress.edu) provided us with the data for _American Literature_ from 2000 (vol. 72, no. 1) - 2017 (vol. 89, no. 3).
 3. Using a combination of scripts and hand-downloads, we collected the remaining data for the 2010s from their respective online platforms: _American Literature_ from 2017-2019 from [Duke University Press](https://dukeupress.edu); _American Quarterly_ from 2013-2019 from [Project Muse](https://muse.jhu.edu/); and _Journal of American History_ from 2013–2019 from [Oxford University Press](https://academic.oup.com/journals/). In each of these cases, our access to the journals' content was made possible by institutional subscriptions managed by BYU's [Harold B. Lee Library](https://lib.byu.edu).
@@ -26,18 +26,18 @@ Throughout this project, we refer to journals by shortened names:
 As mentioned above, the bulk of our data came from JSTOR; Duke UP provided additional data for _American Literature_. Since these two datasets were provided to us directly, no work was necessary. 
 
 ### third-pass-articles
-This folder collects the scripts related to Step 3 of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2019 and completed in December 2019, once the final issue of the decade was published for each journal. 
+This folder collects the scripts related to [Step 3](https://github.com/briancroxall/borderwaters#data) of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2019 and completed in December 2019, once the final issue of the decade was published for each journal. 
 
 Steps
 1. Collect data 
   - articles from amerlite were downloaded by hand as HTML
-  - articles from amerquar were downloaded using the sequence of Jeremy-Browne-authored scripts in the `amerquar` folder
-  - articles from jamericanhistory were downloaded using the sequence of Jeremy-Browne-authored  scripts in the `jamericanhistory` folder
+  - articles from amerquar were downloaded using the sequence of Jeremy Browne-authored scripts in the `amerquar` folder
+  - articles from jamericanhistory were downloaded using the sequence of Jeremy Browne-authored  scripts in the `jamericanhistory` folder
 2. Extract text data 
   - use [Name Mangler](https://manytricks.com/namemangler/) to reformat names of the `HTML` files to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`)
   - use `extract-amerlite.py`, `extract-amerquar.py`, and `extract-jamericanhistory.py` to extract the article from the `HTML` file and save it to a `txt` format.
 3. Combine articles 
-  - Copy new text files from this step with the other text data previously obtained. 
+  - Copy new text files from this step to the folders with the other text data previously obtained. 
 
 ## 2clean_data
 
@@ -58,6 +58,7 @@ In looking through the data, we discovered that book reviews often ended on one 
   - drop caps which start each article
   - curved quotation marks and apostrophes
   - spacing around the letter `y` when it appeared at the end of a word
+6. 3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
 
 
 ### jstor
@@ -84,7 +85,7 @@ This folder contains text that was written by Brian Croxall for endnotes to the 
 - [x] borderwaters repo
 - [x] jstor repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published.)
-- [ ] second-pass articles (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [x] second-pass articles (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 
 
 
