@@ -42,15 +42,22 @@ Steps
 ## 2clean_data
 
 ### duke
-This folder contains the scripts that we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. 
+This folder contains the scripts that we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it by hand.
 
 In looking through the data, we discovered that book reviews often ended on one page and then another review started on that same page. The result was that many book review PDFs would have text from other book reviews on the page. If we wanted to not have duplicated text in the corpus, we needed to handle the book reviews separately.
 
 #### Steps
 1. Use `rename-duke.py` to rename both the PDFs and metadata; renamed PDFs go to a `scripted-renamed/pdfs` folder and renamed metadata goes to a `scripted-renamed/metadata` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`. 
   - During the process, the objects that were identified in the metadata as either "Book Review" or "Brief Mention" were renamed and then placed in a separate folder (`scripted-renamed/pdfs/bookreviews`) so they could be dealt with differently. 
-2. Use `duplicate-resolver.py` within the `scripted-renamed/pdfs/bookreviews` folder. This runs a `filecmp` to check for files that are exact duplicates and then removes those files.
-3. I then looked through the remaining book review files. Many of the issues were reduced to just a single PDF of the book reviews and then one of the "Brief Mentions." But others had individual files for each review in the volume. Since, as mentioned, reviews did not always start at the top of the page, this would have meant that we had duplicate pages within the dataset. To get around this, I found issues with multiple files for book reviews and then combined these PDFs within Adobe Acrobat and eliminated the duplicate pages. There was no tool built into Acrobat to do that work, so I just did this by hand. I then opened each of these new PDFs and made sure that there were no pages missing nor any remaining duplicates. I saved these files in the `scripted-renamed/pdfs/bookreviews` folder.
+2. Use `duke-duplicate-resolver.py` within the `scripted-renamed/pdfs/bookreviews` folder. This runs a file comparison (`filecmp`) to check for files that are duplicates (in case two complete reviews appeared on a page) and then removes all but one copy of those files.
+3. Combine all the PDFs for book reviews within one issue into a single PDF using Adobe Acrobat, ensuring that there were no duplicate pages. Since there was not a tool within Acrobat to do this, the work was done by hand. We saved these files in the `scripted-renamed/pdfs/bookreviews` folder.
+4. Use `extractor-duke.py` to extract text from the different PDFs; it draws on the `pdftotext` utility within the [XpdfReader](https://www.xpdfreader.com/index.html) package. This script does its best to extract text only from the meaningful regions of the page, ignoring headers, footers, margins, or page-proof borders. Measurements for these regions were found using Adobe Acrobat. The output was saved in an `extracted-text` folder. 
+5. Use `clean-duke.py` to clean errors that appeared in the extracted text. Cleaned text was saved in a `cleaned-text` folder. In particular, this script corrects the following:
+  - `f-` ligatures
+  - hyphenated words across page breaks
+  - drop caps which start each article
+  - curved quotation marks and apostrophes
+  - spacing around the letter `y` when it appeared at the end of a word
 
 
 ### jstor
@@ -73,7 +80,7 @@ This folder contains text that was written by Brian Croxall for endnotes to the 
 
 # TODO
 - [ ] all-archi-files repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
-- [ ] amerlite repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [x] amerlite repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] borderwaters repo
 - [x] jstor repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published.)
