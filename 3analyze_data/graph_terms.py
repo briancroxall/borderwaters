@@ -23,8 +23,8 @@ saveloc = 'images/' + year + '_' +  month + '_' + day
 raw = saveloc + '/raw'
 normalized = saveloc + '/normed' 
 counts_dir = 'counts'
-total_counts_dir = 'counts/total'
-article_counts_dir = 'counts/article'
+total_counts_dir = 'counts/total_counts'
+article_counts_dir = 'counts/article_yn'
 
 if not os.path.isdir(saveloc):
     os.mkdir(saveloc)
