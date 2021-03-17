@@ -22,7 +22,6 @@ Throughout this project, we refer to journals by shortened names:
 
 # Folders
 ## 1get_data
-
 As mentioned above, the bulk of our data came from JSTOR; Duke UP provided additional data for _American Literature_. Since these two datasets were provided to us directly, no work was necessary. 
 
 ### third-pass-articles
@@ -40,6 +39,7 @@ Steps
   - Copy new text files from this step to the folders with the other text data previously obtained. 
 
 ## 2clean_data
+Given how data from each source was formatted differently, different approaches for cleaning those data had to be developed.
 
 ### duke
 This folder contains the scripts that we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it by hand.
@@ -58,7 +58,7 @@ In looking through the data, we discovered that book reviews often ended on one 
   - drop caps which start each article
   - curved quotation marks and apostrophes
   - spacing around the letter `y` when it appeared at the end of a word
-6. 3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
+6. 3. Using Finder on Mac OS, copy contents of `cleaned-text` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
 
 
 ### jstor
@@ -71,9 +71,22 @@ This folder contains the scripts we used to clean the data we received from JSTO
 3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
 
 ## 3analyze_data
+This folder contains the scripts we used to find frequencies for particular terms and then to graph those frequencies. It also contains the TSVs of output.
+
+### Steps
+1. Find the frequency of keywords using `count-terms.py`. The script uses regular expressions to find different forms of words (e.g., `archipelago`, `archipelagos`, `archipelagoes`, `archipelagic`, etc.). Output is saved in TSVs by journal title: `amerlite.tsv`, `amerquar.tsv`, and `jamericanhistory.tsv`. Each line of a TSV includes an article ID, the year it was published, its word count (found using the `word_tokenize` module of the [Natural Language Toolkit](https://www.nltk.org/)), and then, for each term/regular expression, a count of total instances in that article, a Y/N column that indicates if the term appears at all in the article (1) or not (0), and a column that lists all the hits that the regular expression generated. 
+
+At various points, we used this script to create `set`s of terms found by the regular expression and sent these sets to text outputs. This allowed us to look iteratively for false positives and to improve the functioning of the regular expressions. Evidence of these operations are still visible in the code, but since it was an intermediate step, we do not include these word lists in this repository.
+
+Finally, the script creates `article-counts.txt`, which displays the number of articles from each journal in the corpus. Note that while we ultimately decided to report on findings from three journals (_American Literature_, _American Quarterly_, _Journal of American History_), the corpus still includes data from the other two journals (_American Literary History_ and _Journal of American Studies_).
+
+2. Graph the frequency of keywords over time (by year and by decade) in the different journals using `graph_terms.py`. The data for this script come from the TSVs created in the previous step. Those data are transformed into new TSVs that are saved to a `counts` folder. Then within the `counts` folder, two new folders are created: `article_yn` and `total_counts`. In each folder, the frequency of a term is reported on either a per-year or per-decade basis. The files in `article_yn` report whether a time appears in an article; regardless of whether the term appears once or 100 times, it reports as a `Yes` (1) or `No` (0). The total yeses are then presented for a given year or decade. The files in `total_counts` report the total number of times a term appears in a given year or decade. 
+
+The script then graphs the frequency of the keyword using the [Matplotlib](https://matplotlib.org/) library.
+
 
 ## 4interpret_data
-This folder contains text that was written by Brian Croxall for endnotes to the conclusion of _Borderwaters_.
+This folder contains text that was written by [Brian Croxall](https://briancroxall.net) for endnotes to the conclusion of _Borderwaters_.
 
 - `endnote_drafts.md` was created in May 2019
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed 
@@ -84,7 +97,7 @@ This folder contains text that was written by Brian Croxall for endnotes to the 
 - [x] amerlite repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] borderwaters repo
 - [x] jstor repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
-- [x] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published.)
+- [ ] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published. 17 March 2021: Now I'm not sure that this can be discarded entirely. See the note in all-archi-files readme about the files taken from this repo)
 - [x] second-pass articles (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 
 
