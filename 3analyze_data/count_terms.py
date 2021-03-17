@@ -85,7 +85,7 @@ def count_yn(count):
 def get_word_count(text):
     # Function to count the number of words in an individual article
     tokens = word_tokenize(text)
-    no_punct = [t for t in tokens if t not in punct]
+    no_punct = [t for t in tokens if t not in punct]  # remove punctuation from tokens
     return len(no_punct)
 
 # test corpus
