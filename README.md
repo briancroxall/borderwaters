@@ -3,6 +3,8 @@ This repository contains work related to conclusion of [Brian Russell Roberts](h
 
 This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and then this repository was made public. 
 
+**_Draft statement:_ This documentation in this repo was peer reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
+
 ## Data
 
 Data for this project were obtained in several steps and from several sources:
@@ -25,7 +27,7 @@ Throughout this project, we refer to journals by shortened names:
 As mentioned above, the bulk of our data came from JSTOR; Duke UP provided additional data for _American Literature_. Since these two datasets were provided to us directly, no work was necessary. 
 
 ### third-pass-articles
-This folder collects the scripts related to [Step 3](https://github.com/briancroxall/borderwaters#data) of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2019 and completed in December 2019, once the final issue of the decade was published for each journal. 
+This folder collects the scripts related to [Step 3](https://github.com/briancroxall/borderwaters#data) of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2018, was revisited in August 2019, and was completed in December 2019, once the final issue of the decade was published for each journal. 
 
 Steps
 1. Collect data 
@@ -71,25 +73,37 @@ This folder contains the scripts we used to clean the data we received from JSTO
 3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
 
 ## 3analyze_data
-This folder contains the scripts we used to find frequencies for particular terms and then to graph those frequencies. It also contains the TSVs of output.
+This folder contains the scripts we used to find frequencies for particular terms and then to graph those frequencies. It contains the TSVs of output, as well as images that were produced along the way.
 
 ### Steps
-1. Find the frequency of keywords using `count-terms.py`. The script uses regular expressions to find different forms of words (e.g., `archipelago`, `archipelagos`, `archipelagoes`, `archipelagic`, etc.). Output is saved in TSVs by journal title: `amerlite.tsv`, `amerquar.tsv`, and `jamericanhistory.tsv`. Each line of a TSV includes an article ID, the year it was published, its word count (found using the `word_tokenize` module of the [Natural Language Toolkit](https://www.nltk.org/)), and then, for each term/regular expression, a count of total instances in that article, a Y/N column that indicates if the term appears at all in the article (1) or not (0), and a column that lists all the hits that the regular expression generated. 
+1. Find the frequency of keywords from the entire corpus (stored in an `articles` folder) using `count-terms.py`. The script uses regular expressions to find different forms of words (e.g., `archipelago`, `archipelagos`, `archipelagoes`, `archipelagic`, etc.). Output is saved in TSVs by journal title: `amerlite.tsv`, `amerquar.tsv`, and `jamericanhistory.tsv`. Each line of a TSV includes an article ID, the year it was published, its word count (found using the `word_tokenize` module of the [Natural Language Toolkit](https://www.nltk.org/)), and then, for each term/regular expression, a count of total instances in that article, a Y/N column that indicates if the term appears at all in the article (1) or not (0), and a column that lists all the hits that the regular expression generated. 
 
 At various points, we used this script to create `set`s of terms found by the regular expression and sent these sets to text outputs. This allowed us to look iteratively for false positives and to improve the functioning of the regular expressions. Evidence of these operations are still visible in the code, but since it was an intermediate step, we do not include these word lists in this repository.
 
-Finally, the script creates `article-counts.txt`, which displays the number of articles from each journal in the corpus. Note that while we ultimately decided to report on findings from three journals (_American Literature_, _American Quarterly_, _Journal of American History_), the corpus still includes data from the other two journals (_American Literary History_ and _Journal of American Studies_).
+Finally, the script creates `article-counts.txt`, which displays the total number of articles from each journal in the corpus. Note that while we ultimately decided to report on findings from three journals (_American Literature_, _American Quarterly_, _Journal of American History_), the corpus still includes data from the other two journals (_American Literary History_ and _Journal of American Studies_).
 
-2. Graph the frequency of keywords over time (by year and by decade) in the different journals using `graph_terms.py`. The data for this script come from the TSVs created in the previous step. Those data are transformed into new TSVs that are saved to a `counts` folder. Then within the `counts` folder, two new folders are created: `article_yn` and `total_counts`. In each folder, the frequency of a term is reported on either a per-year or per-decade basis. The files in `article_yn` report whether a time appears in an article; regardless of whether the term appears once or 100 times, it reports as a `Yes` (1) or `No` (0). The total yeses are then presented for a given year or decade. The files in `total_counts` report the total number of times a term appears in a given year or decade. 
+2. Graph the frequency of keywords over time (by year and by decade) in the different journals using `graph_terms.py`. The data for this script come from the TSVs created in the previous step with `count-terms.py`. Those data are transformed into new TSVs that are saved to a `counts` folder. Then within the `counts` folder, two new folders are created: `article_yn` and `total_counts`. In each folder, the frequency of a term is reported first by journal and then by either a per-year or per-decade basis. The files in `article_yn` report whether a time appears in an article; regardless of whether the term appears once or 100 times, it reports as a `Yes` (1) or `No` (0). The total yeses are then presented for a given year or decade. The files in `total_counts` report the total number of times a term appears in a given year or decade. So `amerlite_archi_decades_article_counts.tsv` in the `article_yn` folder shows the number of articles in _American Literature_ within which _archipelago_ and its variants appear at least once over the decades of the journal's existence. 
 
-The script then graphs the frequency of the keyword using the [Matplotlib](https://matplotlib.org/) library.
+The script then graphs the frequency of the keyword using the [Matplotlib](https://matplotlib.org/) library. Plots are saved in an `images` folder, with a subfolder based on the date the script is run. With that dated folder are two folders: `normed` and `raw`. The former contains graphs of the `total_counts` variety that are normalized (hits / number of words per article). The latter contains raw counts.
+
+**In our work, we analyzed the data from a number of different perspectives. In the conclusion of _Borderwaters_, we decided to only use visualizations that represent the data on a per-decade basis and that show whether a term was or was not in an article (rather than total counts within that article). To simplify the contents of this repository, we have only included the data in the `counts` and `images` folders that correspond to what we report on in the conclusion. That said, a user could use `count_terms.py` and then `graph_terms.py` to recreate the full range of what we considered.**
+
+### folders
+
+#### images
+This folder contains some of the output of the `graph_terms.py` script. The images we used for the final version of the publication were created on 16 January 2020. 
 
 
-## 4interpret_data
+
+## 4publication
 This folder contains text that was written by [Brian Croxall](https://briancroxall.net) for endnotes to the conclusion of _Borderwaters_.
 
 - `endnote_drafts.md` was created in May 2019
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed 
+
+It also contains the `graphs_publication_excel` folder, which contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book.
+
+
 
 
 # TODO
