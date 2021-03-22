@@ -88,6 +88,7 @@ The script then graphs the frequency of the keyword using the [Matplotlib](https
 
 **In our work, we analyzed the data from a number of different perspectives. In the conclusion of _Borderwaters_, we decided to only use visualizations that represent the data on a per-decade basis and that show whether a term was or was not in an article (rather than total counts within that article). To simplify the contents of this repository, we have only included the data in the `counts` and `images` folders that correspond to what we report on in the conclusion. That said, a user could use `count_terms.py` and then `graph_terms.py` to recreate the full range of what we considered.**
 
+3. Calculate the number of times `sea(s)`, variants of `ocean`, or both words appear in articles in the 2010s using `sea-ocean-both.py`. The results are saved in `sob-results-2010s.tsv`. These counts were specifically calculated for footnote 61.
 
 ## 4publication
 This folder contains text that was written by [Brian Croxall](https://briancroxall.net) for endnotes to the conclusion of _Borderwaters_.
