@@ -43,7 +43,7 @@ Steps
 ## 2clean_data
 Given how data from each source was formatted differently, different approaches for cleaning those data had to be developed.
 
-### duke
+### Duke UP
 This folder contains the scripts that we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it by hand.
 
 In looking through the data, we discovered that book reviews often ended on one page and then another review started on that same page. The result was that many book review PDFs would have text from other book reviews on the page. If we wanted to not have duplicated text in the corpus, we needed to handle the book reviews separately.
@@ -88,12 +88,6 @@ The script then graphs the frequency of the keyword using the [Matplotlib](https
 
 **In our work, we analyzed the data from a number of different perspectives. In the conclusion of _Borderwaters_, we decided to only use visualizations that represent the data on a per-decade basis and that show whether a term was or was not in an article (rather than total counts within that article). To simplify the contents of this repository, we have only included the data in the `counts` and `images` folders that correspond to what we report on in the conclusion. That said, a user could use `count_terms.py` and then `graph_terms.py` to recreate the full range of what we considered.**
 
-### folders
-
-#### images
-This folder contains some of the output of the `graph_terms.py` script. The images we used for the final version of the publication were created on 16 January 2020. 
-
-
 
 ## 4publication
 This folder contains text that was written by [Brian Croxall](https://briancroxall.net) for endnotes to the conclusion of _Borderwaters_.
@@ -101,18 +95,15 @@ This folder contains text that was written by [Brian Croxall](https://briancroxa
 - `endnote_drafts.md` was created in May 2019
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed 
 
-It also contains the `graphs_publication_excel` folder, which contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book.
-
-
-
+It also contains the `graphs_publication_excel` and `graphs_publication_png` folders. The form contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The `graphs_publication_png` folder contains individual graphs for the conclusion in PNG format. Files are named by figure numbers for the manuscript.
 
 # TODO
-- [ ] all-archi-files repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
-- [x] amerlite repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [ ] [all-archi-files repo](https://github.com/briancroxall/all-archi-files) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [x] [amerlite repo](https://github.com/briancroxall/amerlite) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] borderwaters repo
-- [x] jstor repo (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
-- [ ] proquest repo (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published. 17 March 2021: Now I'm not sure that this can be discarded entirely. See the note in all-archi-files readme about the files taken from this repo)
-- [x] second-pass articles (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [x] [jstor repo](https://github.com/briancroxall/jstor) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [ ] [proquest repo](https://github.com/briancroxall/proquest) (I think that I don't need anything from here. This was the original grab of data that Jeremy did in Winter 2018 so Lorin would have something to work with. I think that it all ended up being replaced by the JSTOR data and the third-pass. It's useful to keep around, of course, but I don't know that it'd be fair to say that anything we produced here was critical to the finished version of what we published. 17 March 2021: Now I'm not sure that this can be discarded entirely. See the note in all-archi-files readme about the files taken from this repo)
+- [x] [second-pass-articles repo](https://github.com/briancroxall/second-pass-articles) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 
 
 
