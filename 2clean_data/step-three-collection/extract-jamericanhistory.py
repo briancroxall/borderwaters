@@ -11,7 +11,8 @@ Script to extract info from HTML of Journal of American History,
 which Jeremy scraped for our mid-2019 gathering of data for the AQ project.
 
 This script is more or less identical to that which I created for the
-second-pass on the data in 2018. 
+second-pass on the data in 2018 in the (poorly named) Proquest repo
+(https://github.com/briancroxall/proquest). 
 """
 
 from bs4 import BeautifulSoup
