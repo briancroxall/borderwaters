@@ -1,18 +1,18 @@
 # Introduction
 This repository contains work related to conclusion of [Brian Russell Roberts](https://humanities.byu.edu/person/brian-russell-roberts/)'s book [_Borderwaters_](https://www.dukeupress.edu/borderwaters). The project began in January 2018 and continued through the publication of the book in spring 2021. 
 
-This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and then this repository was made public. 
+This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and this repository was made public. 
 
 ## Data
 
 Data for this project were obtained in several steps and from several sources:
-1. JSTOR's [Data for Research](https://www.jstor.org/dfr/) provided us with the bulk of the print runs of the following journals: _American Literature_ from 1929-1999; _American Quarterly_ from 1949-2012; and _Journal of American History_ from 1964-2012. In addition, JSTOR provided us with data from _American Literary History_ (1989-2012) and _Journal of American Studies_ (1967-2012) but in the end we decided to focus our efforts only on the first three journals. 
+1. JSTOR's [Data for Research](https://www.jstor.org/dfr/) provided us with the bulk of the print runs of the following journals: _American Literature_ from 1929-1999; _American Quarterly_ from 1949-2012; and _Journal of American History_ from 1964-2012. In addition, JSTOR provided us with data from _American Literary History_ (1989-2012) and _Journal of American Studies_ (1967-2012), but in the end we decided to focus our efforts only on the first three journals. 
 2. [Duke University Press](https://www.dukeupress.edu) provided us with the data for _American Literature_ from 2000 (vol. 72, no. 1) - 2017 (vol. 89, no. 3).
 3. Using a combination of scripts and hand-downloads, we collected the remaining data for the 2010s from their respective online platforms: _American Literature_ from 2017-2019 from [Duke University Press](https://dukeupress.edu); _American Quarterly_ from 2013-2019 from [Project Muse](https://muse.jhu.edu/); and _Journal of American History_ from 2013–2019 from [Oxford University Press](https://academic.oup.com/journals/). In each of these cases, our access to the journals' content was made possible by institutional subscriptions managed by BYU's [Harold B. Lee Library](https://lib.byu.edu).
 
-We very much appreciate the cooperation of the different publishers and database providers in our research. We also appreciate [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) in [Brigham Young University](https://byu.edu)’s [Office of Digital Humanities](https://odh.byu.edu/) for his help with obtaining the data **in our third step**.
+We very much appreciate the cooperation of the different publishers and database providers in our research. We also appreciate [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) in [Brigham Young University](https://byu.edu)’s [Office of Digital Humanities](https://odh.byu.edu/) for his help with obtaining the data in the abovementioned third step.
 
-For copyright and licensing reasons, the repository contains only scripts and text that we have written; the data that we used cannot be shared. We know this means that our work is not immediately reproducible, but we hope making our process visible will allow interested parties to see how we did the work. 
+For copyright and licensing reasons, the repository contains only scripts and their output, as well as text or spreadsheets we have authored; the data that we used cannot be shared. We know this means that our work is not immediately reproducible, but we hope making our process visible will allow interested parties to see understand and/or critique how we performed our analysis. 
 
 ## Abbreviations
 Throughout this project, we refer to journals by shortened names:
@@ -21,9 +21,9 @@ Throughout this project, we refer to journals by shortened names:
 - `jamericanhistory`: _Journal of American History_
 
 ## Authorship
-The code in this repo was written almost exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. 
+The contents of this repo were written almost exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. 
 
-Code contributions were also made by Jeremy Browne, Associate Research Professor of Digital Humanities at BYU. Robert Reynolds, Assistant Professor of Digital Humanities at BYU, provided significant advice along the way.
+As mentioned, code contributions were made by [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU. [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/), Assistant Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
 
 ## Peer Review
 **_Draft statement:_ This documentation in this repo was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
