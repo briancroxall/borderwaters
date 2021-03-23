@@ -38,19 +38,24 @@ As mentioned above, the bulk of our data came from JSTOR; Duke UP provided addit
 ### step-three-collection
 This folder collects the scripts related to [Step 3](https://github.com/briancroxall/borderwaters#data) of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2018, was revisited in August 2019, and was completed in December 2019, once the final issue of the decade was published for each journal. 
 
-Steps
+#### Steps
 1. Collect data 
   - articles from amerlite were downloaded by hand as HTML
   - articles from amerquar were downloaded using the sequence of Jeremy Browne-authored scripts in the `amerquar` folder
   - articles from jamericanhistory were downloaded using the sequence of Jeremy Browne-authored  scripts in the `jamericanhistory` folder
-2. Extract text data 
-  - use [Name Mangler](https://manytricks.com/namemangler/) to reformat names of the `HTML` files to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`)
-  - use `extract-amerlite.py`, `extract-amerquar.py`, and `extract-jamericanhistory.py` to extract the article from the `HTML` file and save it to a `txt` format.
-3. Combine articles 
-  - Copy new text files from this step to the folders with the other text data previously obtained. 
+
 
 ## 2clean_data
 Given how data from each source was formatted differently, different approaches for cleaning those data had to be developed.
+
+### jstor
+This folder contains the scripts we used to clean the data we received from JSTOR. The data came as metadata (in `.xml`) and as the text of OCR'd articles (in `.txt`). While the filename of an article and its metadata matched, they were not human readable. 
+
+#### Steps
+1. Rename files using `rename-jstor-full-data.py`; renamed text goes to a `renamed-articles` folder and renamed metadata goes to a `renamed-metadata` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`
+    - During the renaming process, this script funnels articles that were titled (in metadata) "Front Matter," "Back Matter," "Volume Information," or "Notes on the Contributors" to a `front-matter` folder. These articles were no longer included in our data moving forward.
+2. Use `jstor-clean.py` to clean the contents of `renamed-articles`, sending output to `simple-cleaned-articles`.
+3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. 
 
 ### Duke UP
 This folder contains the scripts that we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it by hand.
@@ -69,17 +74,17 @@ In looking through the data, we discovered that book reviews often ended on one 
   - drop caps which start each article
   - curved quotation marks and apostrophes
   - spacing around the letter `y` when it appeared at the end of a word
-6. 3. Using Finder on Mac OS, copy contents of `cleaned-text` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
+6. Using Finder on Mac OS, copy contents of `cleaned-text` to folder containing all articles. 
 
-
-### jstor
-This folder contains the scripts we used to clean the data we received from JSTOR. The data came as metadata (in `.xml`) and as the text of OCR'd articles (in `.txt`). While the filename of an article and its metadata matched, they were not especially human readable. We used `rename-jstor-full-data.py` to rename both files based on the metadata.
+### step-three-collection
 
 #### Steps
-1. Rename files using `rename-jstor-full-data.py`; renamed text goes to a `renamed-articles` folder and renamed metadata goes to a `renamed-metadata` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`
-    - During the renaming process, this script funnels articles that were titled (in metadata) "Front Matter," "Back Matter," "Volume Information," or "Notes on the Contributors" to a `front-matter` folder. These articles were no longer included in our data moving forward.
-2. Use `jstor-clean.py` to clean the contents of `renamed-articles`, sending output to `simple-cleaned-articles`.
-3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles` to folder containing all articles. **THIS NEEDS MORE EXPLANATION ONCE I KNOW WHAT OTHER SECTIONS LOOK LIKE.**
+2. Extract text data 
+  - use [Name Mangler](https://manytricks.com/namemangler/) to reformat names of the `HTML` files to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`)
+  - use `extract-amerlite.py`, `extract-amerquar.py`, and `extract-jamericanhistory.py` to extract the article from the `HTML` file and save it to a `txt` format. During this process 
+3. Combine articles 
+  - Copy new text files from this step to the folders with the other text data previously obtained. 
+
 
 ## 3analyze_data
 This folder contains the scripts we used to find frequencies for particular terms and then to graph those frequencies. It contains the TSVs of output, as well as images that were produced along the way.
