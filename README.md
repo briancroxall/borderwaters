@@ -25,6 +25,9 @@ The contents of this repo were written almost exclusively by [Brian Croxall](htt
 
 As mentioned, code contributions were made by [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU. [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/), Assistant Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
 
+## License
+Code in this repository is licensed with a **[insert license here]**. Text in this repository is licensed with a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
+
 ## Peer Review
 **_Draft statement:_ This documentation in this repo was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
 
@@ -32,7 +35,7 @@ As mentioned, code contributions were made by [Jeremy Browne](https://humanities
 ## 1get_data
 As mentioned above, the bulk of our data came from JSTOR; Duke UP provided additional data for _American Literature_. Since these two datasets were provided to us directly, no work was necessary. 
 
-### third-pass-articles
+### step-three-collection
 This folder collects the scripts related to [Step 3](https://github.com/briancroxall/borderwaters#data) of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2018, was revisited in August 2019, and was completed in December 2019, once the final issue of the decade was published for each journal. 
 
 Steps
@@ -105,7 +108,7 @@ This folder contains text that was written by Croxall for endnotes to the conclu
 It also contains the `graphs_publication_excel` and `graphs_publication_png` folders. The former contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The `graphs_publication_png` folder contains individual graphs for the conclusion in PNG format. Files are named by figure numbers for the manuscript.
 
 # TODO
-- [ ] [all-archi-files repo](https://github.com/briancroxall/all-archi-files) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
+- [x] [all-archi-files repo](https://github.com/briancroxall/all-archi-files) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] [amerlite repo](https://github.com/briancroxall/amerlite) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
 - [x] [borderwaters repo](https://github.com/briancroxall/borderwaters)
 - [x] [jstor repo](https://github.com/briancroxall/jstor) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
