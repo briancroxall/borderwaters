@@ -4,7 +4,6 @@ This repository contains work related to conclusion of [Brian Russell Roberts](h
 This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and this repository was made public. 
 
 ## Data
-
 Data for this project were obtained in several steps and from several sources:
 1. JSTOR's [Data for Research](https://www.jstor.org/dfr/) provided us with the bulk of the print runs of the following journals: _American Literature_ from 1929-1999; _American Quarterly_ from 1949-2012; and _Journal of American History_ from 1964-2012. In addition, JSTOR provided us with data from _American Literary History_ (1989-2012) and _Journal of American Studies_ (1967-2012), but in the end we decided to focus our efforts only on the first three journals. 
 2. [Duke University Press](https://www.dukeupress.edu) provided us with the data for _American Literature_ from 2000 (vol. 72, no. 1) - 2017 (vol. 89, no. 3).
@@ -12,7 +11,7 @@ Data for this project were obtained in several steps and from several sources:
 
 We very much appreciate the cooperation of the different publishers and database providers in our research. We also appreciate [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) in [Brigham Young University](https://byu.edu)’s [Office of Digital Humanities](https://odh.byu.edu/) for his help with obtaining the data in the abovementioned third step.
 
-For copyright and licensing reasons, the repository contains only scripts and their output, as well as text or spreadsheets we have authored; the data that we used cannot be shared. We know this means that our work is not immediately reproducible, but we hope making our process visible will allow interested parties to see understand and/or critique how we performed our analysis. 
+For copyright and licensing reasons, the data that we used cannot be shared; as such, the repository contains only scripts and their output, as well as files we have authored. We know this means that our work is not easily reproducible, but we hope making our process visible will allow interested scholars to understand and/or critique how we performed our analysis. 
 
 ## Abbreviations
 Throughout this project, we refer to journals by shortened names:
@@ -21,7 +20,7 @@ Throughout this project, we refer to journals by shortened names:
 - `jamericanhistory`: _Journal of American History_
 
 ## Authorship
-The contents of this repo were written almost exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. 
+The contents of this repo were written almost exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
 
 As mentioned, code contributions were made by [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU. [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/), Assistant Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
 
@@ -40,13 +39,12 @@ This folder collects the scripts related to [Step 3](https://github.com/briancro
 
 #### Steps
 1. Collect data 
-  - articles from amerlite were downloaded by hand as HTML
-  - articles from amerquar were downloaded using the sequence of Jeremy Browne-authored scripts in the `amerquar` folder
-  - articles from jamericanhistory were downloaded using the sequence of Jeremy Browne-authored  scripts in the `jamericanhistory` folder
-
+  - articles from `American Literature` were downloaded by hand as HTML
+  - articles from `American Quarterly` were downloaded using the sequence of Jeremy Browne-authored scripts in the `amerquar` folder
+  - articles from `Journal of American History` were downloaded using the sequence of Jeremy Browne-authored scripts in the `jamericanhistory` folder
 
 ## 2clean_data
-Given how data from each source was formatted differently, different approaches for cleaning those data had to be developed.
+Since data from each source were formatted differently, different approaches for cleaning those data had to be developed.
 
 ### jstor
 This folder contains the scripts we used to clean the data we received from JSTOR. The data came as metadata (in `.xml`) and as the text of OCR'd articles (in `.txt`). While the filename of an article and its metadata matched, they were not human readable. 
@@ -77,14 +75,12 @@ In looking through the data, we discovered that book reviews often ended on one 
 6. Using Finder on Mac OS, copy contents of `cleaned-text` to folder containing all articles. 
 
 ### step-three-collection
+This folder contains scripts that we used to clean the data collected in Step 3 (the rest of the 2010s that were not provided by JSTOR or Duke UP). 
 
 #### Steps
-2. Extract text data 
-  - use [Name Mangler](https://manytricks.com/namemangler/) to reformat names of the `HTML` files to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`)
-  - use `extract-amerlite.py`, `extract-amerquar.py`, and `extract-jamericanhistory.py` to extract the article from the `HTML` file and save it to a `txt` format. During this process 
-3. Combine articles 
-  - Copy new text files from this step to the folders with the other text data previously obtained. 
-
+1. Rename the harvested HTML files with [Name Mangler](https://manytricks.com/namemangler/) to to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`)
+2. Use `extract-amerlite.py`, `extract-amerquar.py`, and `extract-jamericanhistory.py` to extract the body and notes for each article from the `HTML` and save it to a `txt` format. During this process, the text was cleaned using substitutions via regular expressions. 
+3. Using Finder on Mac OS, copy cleaned text files to the folder containing all articles.
 
 ## 3analyze_data
 This folder contains the scripts we used to find frequencies for particular terms and then to graph those frequencies. It contains the TSVs of output, as well as images that were produced along the way.
