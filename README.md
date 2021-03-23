@@ -3,11 +3,6 @@ This repository contains work related to conclusion of [Brian Russell Roberts](h
 
 This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and then this repository was made public. 
 
-**_Draft statement:_ This documentation in this repo was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
-
-## Authorship
-The code in this repo was written exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA.
-
 ## Data
 
 Data for this project were obtained in several steps and from several sources:
@@ -24,6 +19,14 @@ Throughout this project, we refer to journals by shortened names:
 - `amerlite`: _American Literature_
 - `amerquar`: _American Quarterly_
 - `jamericanhistory`: _Journal of American History_
+
+## Authorship
+The code in this repo was written almost exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. 
+
+Code contributions were also made by Jeremy Browne, Associate Research Professor of Digital Humanities at BYU. Robert Reynolds, Assistant Professor of Digital Humanities at BYU, provided significant advice along the way.
+
+## Peer Review
+**_Draft statement:_ This documentation in this repo was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
 
 # Folders
 ## 1get_data
