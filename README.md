@@ -3,7 +3,10 @@ This repository contains work related to conclusion of [Brian Russell Roberts](h
 
 This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and then this repository was made public. 
 
-**_Draft statement:_ This documentation in this repo was peer reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
+**_Draft statement:_ This documentation in this repo was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. The code itself was not reviewed since, at the time of review, the book was in press.**
+
+## Authorship
+The code in this repo was written exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA.
 
 ## Data
 
@@ -91,7 +94,7 @@ The script then graphs the frequency of the keyword using the [Matplotlib](https
 3. Calculate the number of times `sea(s)`, variants of `ocean`, or both words appear in articles in the 2010s using `sea-ocean-both.py`. The results are saved in `sob-results-2010s.tsv`. These counts were specifically calculated for footnote 61 of the conclusion.
 
 ## 4publication
-This folder contains text that was written by [Brian Croxall](https://briancroxall.net) for endnotes to the conclusion of _Borderwaters_.
+This folder contains text that was written by Croxall for endnotes to the conclusion of _Borderwaters_.
 
 - `endnote_drafts.md` was created in May 2019
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed 
