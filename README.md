@@ -88,7 +88,7 @@ The script then graphs the frequency of the keyword using the [Matplotlib](https
 
 **In our work, we analyzed the data from a number of different perspectives. In the conclusion of _Borderwaters_, we decided to only use visualizations that represent the data on a per-decade basis and that show whether a term was or was not in an article (rather than total counts within that article). To simplify the contents of this repository, we have only included the data in the `counts` and `images` folders that correspond to what we report on in the conclusion. That said, a user could use `count_terms.py` and then `graph_terms.py` to recreate the full range of what we considered.**
 
-3. Calculate the number of times `sea(s)`, variants of `ocean`, or both words appear in articles in the 2010s using `sea-ocean-both.py`. The results are saved in `sob-results-2010s.tsv`. These counts were specifically calculated for footnote 61.
+3. Calculate the number of times `sea(s)`, variants of `ocean`, or both words appear in articles in the 2010s using `sea-ocean-both.py`. The results are saved in `sob-results-2010s.tsv`. These counts were specifically calculated for footnote 61 of the conclusion.
 
 ## 4publication
 This folder contains text that was written by [Brian Croxall](https://briancroxall.net) for endnotes to the conclusion of _Borderwaters_.
@@ -96,7 +96,7 @@ This folder contains text that was written by [Brian Croxall](https://briancroxa
 - `endnote_drafts.md` was created in May 2019
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed 
 
-It also contains the `graphs_publication_excel` and `graphs_publication_png` folders. The form contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The `graphs_publication_png` folder contains individual graphs for the conclusion in PNG format. Files are named by figure numbers for the manuscript.
+It also contains the `graphs_publication_excel` and `graphs_publication_png` folders. The former contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The `graphs_publication_png` folder contains individual graphs for the conclusion in PNG format. Files are named by figure numbers for the manuscript.
 
 # TODO
 - [ ] [all-archi-files repo](https://github.com/briancroxall/all-archi-files) (when I've looked at a file in the repo for consideration in this repo, I'll mark it red in OS X)
