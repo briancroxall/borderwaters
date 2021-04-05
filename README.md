@@ -20,15 +20,22 @@ Throughout this project, we refer to journals by shortened names:
 - `jamericanhistory`: _Journal of American History_
 
 ## Authorship
-The contents of this repository were written almost exclusively by [Brian Croxall](https://briancroxall.net) (ORCID: [https://orcid.org/0000-0001-5602-6830](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
+The contents of this repository were written almost exclusively by [Brian Croxall](https://briancroxall.net) ([ORCID](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
 
-As mentioned, code contributions were made by [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU. [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/), Assistant Research Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
+As mentioned, code contributions were made by [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU. 
 
 ## Acknowledgments
 This project began, in part, as the [Digital Humanities and Technology](https://odh.byu.edu/dight/) capstone experience for [Lorin Groesbeck](https://www.linkedin.com/in/lorin-groesbeck-5a236b178/) in Winter 2018, after which she graduated with her BA in American Studies. During the capstone, Groesbeck worked with Croxall to, among other things, prepare the data request for JSTOR, to meet with members of BYU's [Copyright Licensing Office](https://copyright.byu.edu/), and to identify how the JSTOR data needed to be cleaned.
 
+[Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/) ([ORCID](https://orcid.org/0000-0003-0306-087X)), Assistant Research Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
+
 ## License
 Code in this repository is licensed with a **[insert license here]**. Text in this repository is licensed with a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
+
+## Citations
+We suggest the following approach for citing this repository using the eighth edition of [MLA style](https://style.mla.org/):
+
+> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0, 2021, https://github.com/briancroxall/borderwaters.
 
 ## Peer Review
 **_Draft statement:_ This documentation in this repository was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. Because the book was in press at the time of her review, Koeser did not inspect the code.**
