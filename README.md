@@ -9,8 +9,6 @@ Data for this project were obtained in several steps and from several sources:
 2. [Duke University Press](https://www.dukeupress.edu) provided us with the data for _American Literature_ from 2000 (vol. 72, no. 1) - 2017 (vol. 89, no. 3).
 3. Using a combination of scripts and hand-downloads, we collected the remaining data for the 2010s from their respective online platforms: _American Literature_ from 2017-2019 from [Duke University Press](https://dukeupress.edu); _American Quarterly_ from 2013-2019 from [Project Muse](https://muse.jhu.edu/); and _Journal of American History_ from 2013–2019 from [Oxford University Press](https://academic.oup.com/journals/). In each of these cases, our access to the journals' content was made possible by institutional subscriptions managed by BYU's [Harold B. Lee Library](https://lib.byu.edu).
 
-We very much appreciate the cooperation of the different publishers and database providers in our research. We also appreciate [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) in [Brigham Young University](https://byu.edu)’s [Office of Digital Humanities](https://odh.byu.edu/) for his help with obtaining the data in the abovementioned third step.
-
 For copyright and licensing reasons, the data that we used cannot be shared; as such, the repository contains only scripts and their output, as well as files we have authored. We know this means that our work is not easily reproducible, but we hope making our process visible will allow interested scholars to understand and/or critique how we performed our analysis. 
 
 ## Abbreviations
@@ -22,9 +20,11 @@ Throughout this project, we refer to journals by shortened names:
 ## Authorship
 The contents of this repository were written almost exclusively by [Brian Croxall](https://briancroxall.net) ([ORCID](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
 
-As mentioned, code contributions were made by [Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU. 
+[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obotaining the data in the abovementioned third step.
 
 ## Acknowledgments
+We very much appreciate the cooperation of the different publishers and database providers in our research. 
+
 This project began, in part, as the [Digital Humanities and Technology](https://odh.byu.edu/dight/) capstone experience for [Lorin Groesbeck](https://www.linkedin.com/in/lorin-groesbeck-5a236b178/) in Winter 2018, after which she graduated with her BA in American Studies. During the capstone, Groesbeck worked with Croxall to, among other things, prepare the data request for JSTOR, to meet with members of BYU's [Copyright Licensing Office](https://copyright.byu.edu/), and to identify how the JSTOR data needed to be cleaned.
 
 [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/) ([ORCID](https://orcid.org/0000-0003-0306-087X)), Assistant Research Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
