@@ -49,7 +49,7 @@ Our work relies on an ecosystem of existing open and free software packages, lib
 - [Python](https://www.python.org/)
 - [Selenium](https://www.selenium.dev/)
 - [tqdm](https://github.com/tqdm/tqdm)
-- [XpdfReader](https://www.xpdfreader.com/index.html) package
+- [XpdfReader](https://www.xpdfreader.com/index.html)
 
 # Folders
 ## [`1get_data/`](1get_data/)
