@@ -42,6 +42,15 @@ This project began, in part, as the [Digital Humanities and Technology](https://
 
 [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/) ([ORCID](https://orcid.org/0000-0003-0306-087X)), Assistant Research Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
 
+Our work relies on an ecosystem of existing open and free software packages, libraries, and languages. We are grateful for the many organizations and individual developers who create well documented, open source software solutions.
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+- [Matplotlib](https://matplotlib.org/)
+- [Natural Language Toolkit](https://www.nltk.org/)
+- [Python](https://www.python.org/)
+- [Selenium](https://www.selenium.dev/)
+- [tqdm](https://github.com/tqdm/tqdm)
+- [XpdfReader](https://www.xpdfreader.com/index.html) package
+
 # Folders
 ## [`1get_data/`](1get_data/)
 As mentioned above, the bulk of our data came from JSTOR (metadata as `.xml` and articles as `.txt`); Duke UP provided additional data for _American Literature_ (metadata as `.xml` and articles as `.pdf`). Since these two datasets were provided to us directly, no work was necessary. 
@@ -135,9 +144,4 @@ Below is a list of
 - [x] [proquest repo](https://github.com/briancroxall/proquest) 
 - [x] [second-pass-articles repo](https://github.com/briancroxall/second-pass-articles)
 
-## Dependencies
-- nltk
-- BeautifulSoup
-- [XpdfReader](https://www.xpdfreader.com/index.html) package
-- [Matplotlib](https://matplotlib.org/)
 
