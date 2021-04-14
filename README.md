@@ -135,15 +135,3 @@ N.B. To simplify the contents of this repository, we have only included the data
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed.
 
 It also contains the [`graphs_publication_excel/`](4publication/graphs_publication_excel) and [`graphs_publication_png/`](4publication/graphs_publication_png) folders. The former contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The latter folder contains individual graphs for the conclusion in PNG format, which are the output of [`graph_terms.py`](borderwaters#steps-4). Files are named by figure numbers for the manuscript.
-
-## TODO
-Below is a list of 
-
-- [x] [all-archi-files repo](https://github.com/briancroxall/all-archi-files) 
-- [x] [amerlite repo](https://github.com/briancroxall/amerlite) 
-- [x] [borderwaters repo](https://github.com/briancroxall/borderwaters)
-- [x] [jstor repo](https://github.com/briancroxall/jstor) 
-- [x] [proquest repo](https://github.com/briancroxall/proquest) 
-- [x] [second-pass-articles repo](https://github.com/briancroxall/second-pass-articles)
-
-
