@@ -59,7 +59,7 @@ As mentioned above, the bulk of our data came from JSTOR (metadata as `.xml` and
 Since data from each source were formatted differently, different approaches for cleaning those data had to be developed.
 
 ### [`jstor/`](2clean_data/jstor)
-[This folder]((2clean_data/jstor)) contains the scripts we used to clean the data we received from JSTOR. The data came as metadata (in `.xml`) and as the text of OCR'd articles (in `.txt`). While the filename of an article and its metadata matched, they were not human readable. 
+[This folder]((2clean_data/jstor)) contains the scripts we used to clean the data we received from JSTOR. The data came as metadata (in `.xml`) and as the text of articles (in `.txt`). While the filename of an article and its metadata matched, they were not human readable. 
 
 #### Steps
 1. Rename files using `rename-jstor-full-data.py`; renamed text goes to a `renamed-articles/` folder and renamed metadata goes to a `renamed-metadata/` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`.
