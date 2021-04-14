@@ -33,7 +33,7 @@ Code in this repository is licensed with a [Apache License 2.0](https://chooseal
 ## Citations
 We suggest the following approach for citing this repository using the eighth edition of [MLA style](https://style.mla.org/):
 
-> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0.0, 2021, https://github.com/briancroxall/borderwaters. _Zenodo_, https://doi.org/10.5281/zenodo.4689584.
+> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0.1, 2021, https://github.com/briancroxall/borderwaters. _Zenodo_, https://doi.org/10.5281/zenodo.4689584.
 
 ![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4689584.svg)
 
