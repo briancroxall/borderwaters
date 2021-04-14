@@ -6,4 +6,5 @@
 1get_data/step-three-collection/amerquar-txt
 1get_data/step-three-collection/jamericanhistory-txt
 1get_data/step-three-collection/jamericanhistory-dec2019-txt
-
+1get_data/step-three-collection/amerquar/*.txt
+1get_data/step-three-collection/jamericanhistory/*.txt
