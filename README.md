@@ -22,7 +22,7 @@ Throughout this project's scripts and their output, we refer to journals by shor
 ## Authorship
 The contents of this repository were written almost exclusively by [Brian Croxall](https://briancroxall.net) ([ORCID](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
 
-[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) ([ORCID](https://orcid.org/0000-0003-1464-3042)), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obtaining the data in the abovementioned third step.
+[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) ([ORCID](https://orcid.org/0000-0003-1464-3042)), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obtaining the data in the abovementioned [third step](borderwaters#data).
 
 ## Peer Review
 This documentation in this repository was [peer-reviewed](https://github.com/briancroxall/borderwaters/issues/3) by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. Because the book was in press at the time of her review, Koeser did not inspect the code.
@@ -33,7 +33,9 @@ Code in this repository is licensed with a [Apache License 2.0](https://chooseal
 ## Citations
 We suggest the following approach for citing this repository using the eighth edition of [MLA style](https://style.mla.org/):
 
-> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0, 2021, https://github.com/briancroxall/borderwaters.
+> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0.0, 2021, https://github.com/briancroxall/borderwaters. _Zenodo_, https://doi.org/10.5281/zenodo.4689584.
+
+![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4689584.svg)]
 
 ## Acknowledgments
 We very much appreciate the cooperation of the different publishers and database providers in our research. 
