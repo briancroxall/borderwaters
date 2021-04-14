@@ -1,26 +1,39 @@
 # Introduction
 This repository contains work related to the conclusion of [Brian Russell Roberts](https://humanities.byu.edu/person/brian-russell-roberts/)'s book [_Borderwaters_](https://www.dukeupress.edu/borderwaters). The project began in January 2018 and continued through the publication of the book in spring 2021. 
 
-This project was conducted across six separate, private repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and this repository was made public. 
+This project was conducted across six separate repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and this repository was made public. The other repositories remain private.
 
 ## Data
 Data for this project were obtained in several steps and from several sources:
 1. JSTOR's [Data for Research](https://www.jstor.org/dfr/) provided us with the bulk of the print runs of the following journals: _American Literature_ from 1929-1999; _American Quarterly_ from 1949-2012; and _Journal of American History_ from 1964-2012. In addition, JSTOR provided us with data from _American Literary History_ (1989-2012) and _Journal of American Studies_ (1967-2012), but in the end we decided to focus our efforts only on the first three journals. 
 2. [Duke University Press](https://www.dukeupress.edu) provided us with the data for _American Literature_ from 2000 (vol. 72, no. 1) - 2017 (vol. 89, no. 3).
-3. Using a combination of scripts and hand-downloads, we collected the remaining data for the 2010s from their respective online platforms: _American Literature_ from 2017-2019 from [Duke University Press](https://dukeupress.edu); _American Quarterly_ from 2013-2019 from [Project Muse](https://muse.jhu.edu/); and _Journal of American History_ from 2013–2019 from [Oxford University Press](https://academic.oup.com/journals/). In each of these cases, our access to the journals' content was made possible by institutional subscriptions managed by BYU's [Harold B. Lee Library](https://lib.byu.edu).
+3. Using a combination of scripts and manual downloads, we collected the remaining data for the 2010s from their respective online platforms: _American Literature_ from 2017-2019 from [Duke University Press](https://dukeupress.edu); _American Quarterly_ from 2013-2019 from [Project Muse](https://muse.jhu.edu/); and _Journal of American History_ from 2013–2019 from [Oxford University Press](https://academic.oup.com/journals/). In each of these cases, our access to the journals' content was made possible by institutional subscriptions managed by BYU's [Harold B. Lee Library](https://lib.byu.edu).
 
 For copyright and licensing reasons, the data that we used cannot be shared; as such, the repository contains only scripts and their output, as well as files we have authored. We know this means that our work is not easily reproducible, but we hope making our process visible will allow interested scholars to understand and/or critique how we performed our analysis. 
 
 ## Abbreviations
-Throughout this project, we refer to journals by shortened names:
+Throughout this project's scripts and their output, we refer to journals by shortened names:
 - `amerlite`: _American Literature_
+- `amerlitehist`: _American Literary History_ 
 - `amerquar`: _American Quarterly_
 - `jamericanhistory`: _Journal of American History_
+- `jamerstud`: _Journal of American Studies_ 
 
 ## Authorship
 The contents of this repository were written almost exclusively by [Brian Croxall](https://briancroxall.net) ([ORCID](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
 
-[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obotaining the data in the abovementioned third step.
+[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obtaining the data in the abovementioned third step.
+
+## Peer Review
+This documentation in this repository was [peer-reviewed](https://github.com/briancroxall/borderwaters/issues/3) by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. Because the book was in press at the time of her review, Koeser did not inspect the code.
+
+## License
+Code in this repository is licensed with a [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/). Text and data in this repository are licensed with a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
+
+## Citations
+We suggest the following approach for citing this repository using the eighth edition of [MLA style](https://style.mla.org/):
+
+> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0, 2021, https://github.com/briancroxall/borderwaters.
 
 ## Acknowledgments
 We very much appreciate the cooperation of the different publishers and database providers in our research. 
@@ -29,19 +42,8 @@ This project began, in part, as the [Digital Humanities and Technology](https://
 
 [Rob Reynolds](https://humanities.byu.edu/person/rob-reynolds/) ([ORCID](https://orcid.org/0000-0003-0306-087X)), Assistant Research Professor of Digital Humanities at BYU, provided significant advice about all things Python along the way.
 
-## License
-Code in this repository is licensed with a **[insert license here]**. Text in this repository is licensed with a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
-
-## Citations
-We suggest the following approach for citing this repository using the eighth edition of [MLA style](https://style.mla.org/):
-
-> Croxall, Brian. Borderwaters _Repository_. _GitHub_, v1.0, 2021, https://github.com/briancroxall/borderwaters.
-
-## Peer Review
-**_Draft statement:_ This documentation in this repository was peer-reviewed by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. Because the book was in press at the time of her review, Koeser did not inspect the code.**
-
 # Folders
-## `1get_data/`
+## `[1get_data/](1get_data/)`
 As mentioned above, the bulk of our data came from JSTOR; Duke UP provided additional data for _American Literature_. Since these two datasets were provided to us directly, no work was necessary. 
 
 ### `step-three-collection/`
@@ -49,7 +51,7 @@ This folder collects the scripts related to [Step 3](https://github.com/briancro
 
 #### Steps
 1. Collect data 
-  - articles from `American Literature` were downloaded by hand as HTML
+  - articles from `American Literature` were downloaded manually as HTML
   - articles from `American Quarterly` were downloaded using the sequence of Jeremy Browne-authored scripts in the `amerquar/` folder
   - articles from `Journal of American History` were downloaded using the sequence of Jeremy Browne-authored scripts in the `jamericanhistory/` folder
 
@@ -66,7 +68,7 @@ This folder contains the scripts we used to clean the data we received from JSTO
 3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles/` to folder containing all articles. 
 
 ### `duke/`
-This folder contains the scripts we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it by hand.
+This folder contains the scripts we used to clean the data that we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `XML` format. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it manually.
 
 In looking through the data, we discovered that book reviews often ended on one page and then another review started on that same page. The result was that many book review PDFs would have text from other book reviews on the page. If we wanted to not have duplicated text in the corpus, we needed to handle the book reviews separately.
 
@@ -74,7 +76,7 @@ In looking through the data, we discovered that book reviews often ended on one 
 1. Use `rename-duke.py` to rename both the PDFs and metadata; renamed PDFs go to a `scripted-renamed/pdfs/` folder and renamed metadata goes to a `scripted-renamed/metadata/` folder. Renamed files take the following format: `journalAbbreviation_year_vol_issue_firstPage-lastPage_articleID`. 
   - During the process, the objects that were identified in the metadata as either "Book Review" or "Brief Mention" were renamed and then placed in a separate folder (`scripted-renamed/pdfs/bookreviews/`) so they could be dealt with differently. 
 2. Use `duke-duplicate-resolver.py` within the `scripted-renamed/pdfs/bookreviews/` folder. This runs a file comparison (`filecmp`) to check for files that are duplicates (in case two complete reviews appeared on a page) and then removes all but one copy of those files.
-3. Combine all the PDFs for book reviews within one issue into a single PDF using Adobe Acrobat, ensuring that there were no duplicate pages. Since there was not a tool within Acrobat to do this, the work was done by hand. We saved these files in the `scripted-renamed/pdfs/bookreviews/` folder.
+3. Combine all the PDFs for book reviews within one issue into a single PDF using Adobe Acrobat, ensuring that there were no duplicate pages. Since there was not a tool within Acrobat to do this, the work was done manually. We saved these files in the `scripted-renamed/pdfs/bookreviews/` folder.
 4. Use `extractor-duke.py` to extract text from the different PDFs; it draws on the `pdftotext` utility within the [XpdfReader](https://www.xpdfreader.com/index.html) package. This script does its best to extract text only from the meaningful regions of the page, ignoring headers, footers, margins, or page-proof borders. Measurements for these regions were found using Adobe Acrobat. The output was saved in an `extracted-text/` folder. 
 5. Use `clean-duke.py` to clean errors that appeared in the extracted text. Cleaned text was saved in a `cleaned-text/` folder. In particular, this script corrects the following:
   - `f-` ligatures
@@ -118,7 +120,9 @@ This folder contains text that was written by Croxall for endnotes to the conclu
 
 It also contains the `graphs_publication_excel/` and `graphs_publication_png/` folders. The former contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The `graphs_publication_png/` folder contains individual graphs for the conclusion in PNG format. Files are named by figure numbers for the manuscript.
 
-# TODO
+## TODO
+Below is a list of 
+
 - [x] [all-archi-files repo](https://github.com/briancroxall/all-archi-files) 
 - [x] [amerlite repo](https://github.com/briancroxall/amerlite) 
 - [x] [borderwaters repo](https://github.com/briancroxall/borderwaters)
