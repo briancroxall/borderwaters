@@ -22,7 +22,7 @@ Throughout this project's scripts and their output, we refer to journals by shor
 ## Authorship
 The contents of this repository were written almost exclusively by [Brian Croxall](https://briancroxall.net) ([ORCID](https://orcid.org/0000-0001-5602-6830)), Assistant Research Professor of [Digital Humanities](https://odh.byu.edu) at [Brigham Young University](https://byu.edu), Provo, Utah, USA. Errors and faults should be attributed to him. His work was conducted in ongoing and iterative dialogue with Brian Russell Roberts.
 
-[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obtaining the data in the abovementioned third step.
+[Jeremy Browne](https://humanities.byu.edu/person/jeremy-browne-2/) ([ORCID](https://orcid.org/0000-0003-1464-3042)), Associate Research Professor of Digital Humanities at BYU, made important code contributions that assisted with obtaining the data in the abovementioned third step.
 
 ## Peer Review
 This documentation in this repository was [peer-reviewed](https://github.com/briancroxall/borderwaters/issues/3) by [Rebecca Sutton Koeser](https://rlskoeser.github.io/), Lead Developer at [The Center for Digital Humanities](https://cdh.princeton.edu/) at Princeton University. Because the book was in press at the time of her review, Koeser did not inspect the code.
@@ -44,16 +44,16 @@ This project began, in part, as the [Digital Humanities and Technology](https://
 
 # Folders
 ## [`1get_data/`](1get_data/)
-As mentioned above, the bulk of our data came from JSTOR; Duke UP provided additional data for _American Literature_. Since these two datasets were provided to us directly, no work was necessary. 
+As mentioned above, the bulk of our data came from JSTOR (metadata as `.xml` and articles as `.txt`); Duke UP provided additional data for _American Literature_ (metadata as `.xml` and articles as `.pdf`). Since these two datasets were provided to us directly, no work was necessary. 
 
 ### [`step-three-collection/`](1get_data/step-three-collection)
 [This folder](1get_data/step-three-collection) collects the scripts related to [Step 3](https://github.com/briancroxall/borderwaters#data) of the data (collecting data from the 2010s for years not provided by either JSTOR or Duke UP). This work was begun in August 2018, was revisited in August 2019, and was completed in December 2019, once each journal published its final issue of the decade. 
 
 #### Steps
 1. Collect data 
-  - articles from _American Literature_ were downloaded manually as HTML.
-  - articles from _American Quarterly_ were downloaded using the sequence of Jeremy Browne-authored scripts in the [`amerquar/`](1get_data/step-three-collection/amerquar) folder.
-  - articles from _Journal of American History_ were downloaded using the sequence of Jeremy Browne-authored scripts in the [`jamericanhistory/`](1get_data/step-three-collection/jamericanhistory) folder.
+  - articles from _American Literature_ were downloaded manually as `.html`.
+  - articles from _American Quarterly_ were downloaded as `.html` using the sequence of Jeremy Browne-authored scripts in the [`amerquar/`](1get_data/step-three-collection/amerquar) folder.
+  - articles from _Journal of American History_ were downloaded as `.html` using the sequence of Jeremy Browne-authored scripts in the [`jamericanhistory/`](1get_data/step-three-collection/jamericanhistory) folder.
 
 ## [`2clean_data/`](2clean_data/)
 Since data from each source were formatted differently, different approaches for cleaning those data had to be developed.
@@ -68,7 +68,7 @@ Since data from each source were formatted differently, different approaches for
 3. Using Finder on Mac OS, copy contents of `simple-cleaned-articles/` to folder containing all articles. 
 
 ### [`duke/`](2clean_data/duke)
-[This folder](2clean_data/duke) contains the scripts we used to clean the data we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of PDFs and a folder of metadata in `.xml`. The names of the metadata and PDF files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it manually.
+[This folder](2clean_data/duke) contains the scripts we used to clean the data we received from Duke UP for _American Literature_ for the years 2000-2017. The data were organized in folders for each issue. In each of those folders was a folder of articles in `.pdf` and a folder of metadata in `.xml`. The names of the metadata and `.pdf` files did not match nor were they always human-readable. The data for issue (vol. 86, no.3) was corrupted, so we downloaded it manually.
 
 In looking through the data, we discovered that book reviews often ended on one page and then another review started on that same page. The result was that many book review PDFs would have text from other book reviews on the page. If we wanted to not have duplicated text in the corpus, we needed to handle the book reviews separately.
 
@@ -90,7 +90,7 @@ In looking through the data, we discovered that book reviews often ended on one 
 This folder contains scripts that we used to clean [the data collected in Step 3](https://github.com/briancroxall/borderwaters#data) (the rest of the 2010s that were not provided by JSTOR or Duke UP). 
 
 #### Steps
-1. Rename the harvested HTML files with [Name Mangler](https://manytricks.com/namemangler/) to to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`).
+1. Rename the harvested `.html` files with [Name Mangler](https://manytricks.com/namemangler/) to to match the structure used throughout the project (`journal_year_vol_iss_fpage-lpage_id`).
 2. Use `extract-amerlite.py`, `extract-amerquar.py`, and `extract-jamericanhistory.py` to extract the body and notes for each article from the `.html` and save it to a `.txt` format. During this process, the text was cleaned using substitutions via regular expressions. 
 3. Using Finder on Mac OS, copy cleaned text files to the folder containing all articles.
 
@@ -123,7 +123,7 @@ N.B. To simplify the contents of this repository, we have only included the data
 - `endnote_drafts.md` was created in May 2019.
 - `endnote_edits.docx` was created in January 2020 as the draft of the manuscript was nearing completion, and after the third pass of data collection had been completed.
 
-It also contains the [`graphs_publication_excel/`](4publication/graphs_publication_excel) and [`graphs_publication_png/`](4publication/graphs_publication_png) folders. The former contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The `graphs_publication_png/` folder contains individual graphs for the conclusion in PNG format, which are the output of [`graph_terms.py`](borderwaters#steps-4). Files are named by figure numbers for the manuscript.
+It also contains the [`graphs_publication_excel/`](4publication/graphs_publication_excel) and [`graphs_publication_png/`](4publication/graphs_publication_png) folders. The former contains Excel files that were created to send to Duke University Press in January 2020 as part of the complete manuscript of _Borderwaters_. The files are named by the figure numbers for the manuscript and contain counts and line graphs. The Duke UP team used these files to make their own version of the graphs for the published book. The latter folder contains individual graphs for the conclusion in PNG format, which are the output of [`graph_terms.py`](borderwaters#steps-4). Files are named by figure numbers for the manuscript.
 
 ## TODO
 Below is a list of 
