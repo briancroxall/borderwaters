@@ -1,5 +1,5 @@
 # Introduction
-This repository contains work related to the conclusion of [Brian Russell Roberts](https://humanities.byu.edu/person/brian-russell-roberts/)'s book [_Borderwaters_](https://www.dukeupress.edu/borderwaters). The project began in January 2018 and continued through the publication of the book in spring 2021. 
+This repository contains work related to the conclusion of [Brian Russell Roberts](https://humanities.byu.edu/person/brian-russell-roberts/)'s book [_Borderwaters: Amid the Archipelagic States of America_](https://www.dukeupress.edu/borderwaters). The project began in January 2018 and continued through the publication of the book in spring 2021. 
 
 This project was conducted across six separate repositories, of which this is one. Prior to the publication of the book, the work was collected and organized in this repository, and this repository was made public. The other repositories remain private.
 
