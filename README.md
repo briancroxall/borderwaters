@@ -53,6 +53,8 @@ Our work relies on an ecosystem of existing open and free software packages, lib
 - [tqdm](https://github.com/tqdm/tqdm)
 - [XpdfReader](https://www.xpdfreader.com/index.html)
 
+Since the work was done across multiple years, particular versions of dependencies were not tracked throughout the project. Python 3 was used throughout.
+
 # Folders
 ## [`1get_data/`](1get_data/)
 As mentioned above, the bulk of our data came from JSTOR (metadata as `.xml` and articles as `.txt`); Duke UP provided additional data for _American Literature_ (metadata as `.xml` and articles as `.pdf`). Since these two datasets were provided to us directly, no work was necessary. 
